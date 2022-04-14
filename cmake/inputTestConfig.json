@@ -1,0 +1,12 @@
+{
+  "TEST_COMPONENTS": ["../../../../Platform/Common/Libraries/IPC/IPC_HostIntegration/Components/Adp_CameraSource",
+                      "../../../../Platform/Common/Libraries/IPC/IPC_HostIntegration/Components/Adp_Persistency",
+                      "../../../../Platform/Common/Libraries/IPC/IPC_HostIntegration/Components/Adp_ScreenRenderer",
+                      "../../../../Platform/Common/Libraries/IPC/IPC_HostIntegration/Components/Adp_VideoSource",
+                      "../../../../Platform/CPU/Components/Rtu-DemoBuilder",
+                      "../../../../Platform/CPU/Components/Rtu-DMSAlgoSE",
+                      "../../../../Platform/CPU/Components/Rtu-DMSDrowsinessMonitor",
+                      "../../../../Platform/CPU/Components/Rtu-FaceDetectSmartEye",
+                      "../../../../Platform/CPU/Components/Rtu-FaceIdentAlgoSE",
+                      "../../../../Platform/CPU/Components/Rtu-TestOutputBuilder"]
+}

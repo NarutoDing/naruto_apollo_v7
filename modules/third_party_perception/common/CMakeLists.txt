@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(modules_third_party_perception_common)
+message("${Green} [info] modules_third_party_perception_common cmakelist ${ColourReset}")
+
+add_library(modules_third_party_perception_common_third_party_perception_util  SHARED
+  third_party_perception_util.cc
+)
+set_target_properties(modules_third_party_perception_common_third_party_perception_util  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_third_party_perception_common_third_party_perception_util
+  modules::third_party_perception::common::third_party_perception_gflags
+  modules::map::hdmap::hdmap_util
+)
+add_library(modules::third_party_perception::common::third_party_perception_util  ALIAS   modules_third_party_perception_common_third_party_perception_util)
+
+add_library(modules_third_party_perception_common_third_party_perception_gflags  SHARED
+  third_party_perception_gflags.cc
+)
+set_target_properties(modules_third_party_perception_common_third_party_perception_gflags  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_third_party_perception_common_third_party_perception_gflags
+  ${gflags_LIBRARIES}
+)
+add_library(modules::third_party_perception::common::third_party_perception_gflags  ALIAS   modules_third_party_perception_common_third_party_perception_gflags)
+

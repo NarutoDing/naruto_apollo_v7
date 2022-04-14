@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(modules_planning_tasks_optimizers_open_space_trajectory_partition)
+message("${Green} [info] modules_planning_tasks_optimizers_open_space_trajectory_partition cmakelist ${ColourReset}")
+
+add_library(modules_planning_tasks_optimizers_open_space_trajectory_partition_open_space_trajectory_partition  SHARED
+  open_space_trajectory_partition.cc
+)
+set_target_properties(modules_planning_tasks_optimizers_open_space_trajectory_partition_open_space_trajectory_partition  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_planning_tasks_optimizers_open_space_trajectory_partition_open_space_trajectory_partition
+  modules::common::status::status
+  modules::planning::proto::planning_config_cc_proto
+  modules::planning::tasks::task
+  modules::planning::tasks::optimizers::trajectory_optimizer
+)
+add_library(modules::planning::tasks::optimizers::open_space_trajectory_partition::open_space_trajectory_partition  ALIAS   modules_planning_tasks_optimizers_open_space_trajectory_partition_open_space_trajectory_partition)
+

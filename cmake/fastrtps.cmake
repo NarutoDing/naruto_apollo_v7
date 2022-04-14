@@ -1,0 +1,18 @@
+# Finds fastrtps library and compilers and extends
+include($ENV{THIRD_LIBRARY_INSTALL_PATH}/fast-rtps-1.5.0-1/lib/fastrtps/cmake/fastrtpsConfig.cmake)
+include($ENV{THIRD_LIBRARY_INSTALL_PATH}/fast-rtps-1.5.0-1/lib/fastrtps/cmake/fastrtpsConfigVersion.cmake)
+include($ENV{THIRD_LIBRARY_INSTALL_PATH}/fast-rtps-1.5.0-1/lib/fastrtps/cmake/fastrtpsTargets.cmake)
+find_package(fastrtps REQUIRED HINTS  $ENV{THIRD_LIBRARY_INSTALL_PATH}/fast-rtps-1.5.0-1/lib/fastrtps/cmake)
+if(fastrtps_FOUND)
+  message("${BoldCyan} [ok] fastrtps library found ${ColourReset}")
+  message(STATUS "fastrtps version : ${PACKAGE_VERSION}")
+  message(STATUS "fastrtps include path : ${fastrtps_INCLUDE_DIR}")
+  message(STATUS "fastrtps libraries : ${fastrtps_LIB_DIR}")
+  if(NOT ${PACKAGE_VERSION} STREQUAL "1.5.0")
+    message(FATAL_ERROR "${Red} [error] naruto apollo need fastrtps 1.5.0 ${ColourReset}")
+  endif()
+else()
+  message(FATAL_ERROR "${Red} [error] fastrtps is needed but can not be found ${ColourReset}")
+endif()
+include_directories(${fastrtps_INCLUDE_DIR})
+

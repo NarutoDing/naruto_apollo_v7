@@ -1,0 +1,78 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(modules_map_tools)
+message("${Green} [info] modules_map_tools cmakelist ${ColourReset}")
+
+add_executable(map_tool
+  map_tool.cc
+)
+target_link_libraries(map_tool
+  cyber::common::file
+  cyber::common::log
+  modules::common::configs::config_gflags
+  modules::map::hdmap::hdmap_util
+  modules::map::proto::map_cc_proto
+  ${gflags_LIBRARIES}
+)
+add_executable(map_xysl
+  map_xysl.cc
+)
+target_link_libraries(map_xysl
+  modules::common::configs::config_gflags
+  modules::common::util::util
+  modules::map::hdmap::hdmap_util
+  ${gflags_LIBRARIES}
+)
+add_executable(refresh_default_end_way_point
+  refresh_default_end_way_point.cc
+)
+target_link_libraries(refresh_default_end_way_point
+  cyber::common::file
+  cyber::common::log
+  modules::map::hdmap::hdmap_util
+  modules::routing::proto::poi_cc_proto
+  modules::routing::proto::routing_cc_proto
+)
+add_executable(sim_map_generator
+  sim_map_generator.cc
+)
+target_link_libraries(sim_map_generator
+  cyber::common::file
+  cyber::common::log
+  modules::common::configs::config_gflags
+  modules::common::util::points_downsampler
+  modules::map::hdmap::hdmap_util
+  modules::map::hdmap::adapter::opendrive_adapter
+  modules::map::proto::map_cc_proto
+  ${gflags_LIBRARIES}
+  ${absl}
+)
+add_executable(proto_map_generator
+  proto_map_generator.cc
+)
+target_link_libraries(proto_map_generator
+  cyber::common::file
+  cyber::common::log
+  modules::map::hdmap::hdmap_util
+  modules::map::hdmap::adapter::opendrive_adapter
+  modules::map::proto::map_cc_proto
+  ${gflags_LIBRARIES}
+)
+add_executable(bin_map_generator
+  bin_map_generator.cc
+)
+target_link_libraries(bin_map_generator
+  cyber::common::file
+  cyber::common::log
+  modules::map::hdmap::hdmap_util
+  modules::map::proto::map_cc_proto
+  ${gflags_LIBRARIES}
+)
+add_executable(quaternion_euler
+  quaternion_euler.cc
+)
+target_link_libraries(quaternion_euler
+  modules::common::math::math
+  modules::common::util::util
+  ${gflags_LIBRARIES}
+)

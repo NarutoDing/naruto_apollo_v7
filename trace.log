@@ -1,0 +1,943 @@
+Given directory is already present ...
+Cleaning the directory, /home/naruto/naruto_apollo_v7/build
+
+Cleaning .....
+
+Given directory is already present ...
+Cleaning the directory, /home/naruto/naruto_apollo_v7/build/
+
+Cleaning ....
+
+
+######################### Inside Host Build #########################
+
+
+
+Starting Build
+Building.................
+
+
+#####################################################################
+
+[34m[1m[info][0m Current Build Description:
+
+	>> Detected Host OS : LINUX 
+
+	>> Build for : HOST Platform 
+
+	>> Build for OS: LINUX 
+
+	>> Build Type: DEBUG 
+
+	>> Build Path: /home/naruto/naruto_apollo_v7/build/host-linux 
+
+	>> OpenVX Lib Path:  reserved
+
+	>> Python Tool Path: /home/naruto/naruto_apollo_v7/tools/Python-3.9.5/bin 
+
+	>> OpenCV Tool Path: /home/naruto/naruto_apollo_v7/tools/thirdparty/opencv-4.4.0 
+
+	>> Cmake Tool Path: /home/naruto/naruto_apollo_v7/tools/Cmake-3.20.5/bin/cmake 
+
+	>> Script Location: /home/naruto/naruto_apollo_v7/cmake 
+
+
+#####################################################################
+
+
+
+Executing CMake...........
+
+[34m[1m[info][0m /home/naruto/naruto_apollo_v7/tools/Cmake-3.20.5/bin/cmake -DCMAKE_BUILD_TYPE=Debug /home/naruto/naruto_apollo_v7/home/naruto/naruto_apollo_v7/build/host-linux
+
+##############################################################
+
+-- The C compiler identification is GNU 10.3.0
+-- The CXX compiler identification is GNU 10.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+[32m [info] naruto_apollo cmakelist [m
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Found Protobuf: /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/bin/protoc-3.14.0.0 (found version "3.14.0.0")
+[1;36m [ok] protobuf library found [m
+-- Protobuf version : 3.14.0.0
+-- Protobuf include path : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/include
+-- Protobuf libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotobuf.so.3.14.0.0
+-- Protobuf compiler libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotoc.so.3.14.0.0
+-- Found PROTOBUF Compiler: /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/bin/protoc-3.14.0.0
+[1;36m [ok] fastrtps library found [m
+-- fastrtps version : 1.5.0
+-- fastrtps include path : /home/naruto/naruto_apollo_v7/bin/library/fast-rtps-1.5.0-1/include
+-- fastrtps libraries : /home/naruto/naruto_apollo_v7/bin/library/fast-rtps-1.5.0-1/lib
+[1;36m [ok] fastcdr library found [m
+-- fastcdr version : 1.0.7
+-- fastcdr include path : /home/naruto/naruto_apollo_v7/bin/library/fast-rtps-1.5.0-1/include
+-- fastcdr libraries : /home/naruto/naruto_apollo_v7/bin/library/fast-rtps-1.5.0-1/lib
+-- AAAAAAAAAAAA gflags_sharedgflags_nothreads_shared
+[1;36m [ok] gflags library found [m
+-- gflags version : 2.2.2
+-- gflags include path : /home/naruto/naruto_apollo_v7/bin/library/gflags-2.2.2/include
+-- gflags libraries : /home/naruto/naruto_apollo_v7/tools/../bin/library/gflags-2.2.2/lib/libgflags.so
+[1;36m [ok] glog library found [m
+-- glog version : 0.4.0
+-- glog include path : /home/naruto/naruto_apollo_v7/tools/../bin/library/glog-0.4.0/include
+-- glog libraries : /home/naruto/naruto_apollo_v7/tools/../bin/library/glog-0.4.0/lib/libglog.so
+-- Found Curses: /usr/lib/x86_64-linux-gnu/libcurses.so
+-- Found CUDA: /usr/local/cuda-11.4 (found version "11.4")
+[32m [info] cyber cmakelist [m
+[32m [info] cyber_service cmakelist [m
+[32m [info] cyber_task cmakelist [m
+[32m [info] cyber_message cmakelist [m
+[32m [info] cyber_data cmakelist [m
+[32m [info] cyber_blocker cmakelist [m
+[32m [info] cyber_mainboard cmakelist [m
+[32m [info] cyber_proto cmakelist [m
+[1;36m [ok] protobuf library found [m
+-- Protobuf version : 3.14.0.0
+-- Protobuf include path : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/include
+-- Protobuf libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotobuf.so.3.14.0.0
+-- Protobuf compiler libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotoc.so.3.14.0.0
+-- Found PROTOBUF Compiler: /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/bin/protoc-3.14.0.0
+[32m [info] start to generate cpp and python protobuf in /home/naruto/naruto_apollo_v7/cyber/proto [m
+[32m [info] cyber_component cmakelist [m
+[32m [info] cyber_python cmakelist [m
+[32m [info] cyber_sysmo cmakelist [m
+[32m [info] cyber_node cmakelist [m
+[32m [info] cyber_logger cmakelist [m
+[32m [info] cyber_tools cmakelist [m
+[32m [info] cyber_class_loader cmakelist [m
+[32m [info] cyber_base cmakelist [m
+[32m [info] cyber_transport cmakelist [m
+[32m [info] cyber_time cmakelist [m
+[32m [info] cyber_parameter cmakelist [m
+[32m [info] cyber_timer cmakelist [m
+[32m [info] cyber_service_discovery cmakelist [m
+[32m [info] cyber_event cmakelist [m
+[32m [info] cyber_common cmakelist [m
+[32m [info] cyber_scheduler cmakelist [m
+[32m [info] cyber_examples cmakelist [m
+[32m [info] cyber_record cmakelist [m
+[32m [info] cyber_croutine cmakelist [m
+[32m [info] cyber_io cmakelist [m
+[32m [info] cyber_python_cyber_py3 cmakelist [m
+[32m [info] cyber_python_internal cmakelist [m
+[32m [info] cyber_python_cyber_py3_test cmakelist [m
+[32m [info] cyber_python_cyber_py3_examples cmakelist [m
+[32m [info] cyber_tools_cyber_launch cmakelist [m
+[32m [info] cyber_tools_cyber_service cmakelist [m
+[32m [info] cyber_tools_cyber_recorder cmakelist [m
+[32m [info] cyber_tools_cyber_channel cmakelist [m
+[32m [info] cyber_tools_cyber_node cmakelist [m
+[32m [info] cyber_tools_cyber_monitor cmakelist [m
+[32m [info] cyber_tools_cyber_recorder_player cmakelist [m
+[32m [info] cyber_class_loader_test cmakelist [m
+[32m [info] cyber_class_loader_utility cmakelist [m
+[32m [info] cyber_class_loader_shared_library cmakelist [m
+[32m [info] cyber_transport_receiver cmakelist [m
+[32m [info] cyber_transport_rtps cmakelist [m
+[32m [info] cyber_transport_message cmakelist [m
+[32m [info] cyber_transport_transmitter cmakelist [m
+[32m [info] cyber_transport_integration_test cmakelist [m
+[32m [info] cyber_transport_dispatcher cmakelist [m
+[32m [info] cyber_transport_qos cmakelist [m
+[32m [info] cyber_transport_common cmakelist [m
+[32m [info] cyber_transport_shm cmakelist [m
+[32m [info] cyber_service_discovery_communication cmakelist [m
+[32m [info] cyber_examples_common_component_example cmakelist [m
+[32m [info] cyber_examples_timer_component_example cmakelist [m
+[32m [info] cyber_examples_proto cmakelist [m
+[1;36m [ok] protobuf library found [m
+-- Protobuf version : 3.14.0.0
+-- Protobuf include path : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/include
+-- Protobuf libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotobuf.so.3.14.0.0
+-- Protobuf compiler libraries : /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/lib/libprotoc.so.3.14.0.0
+-- Found PROTOBUF Compiler: /home/naruto/naruto_apollo_v7/bin/library/protobuf-3.14.0/bin/protoc-3.14.0.0
+[32m [info] start to generate cpp and python protobuf in /home/naruto/naruto_apollo_v7/cyber/examples/proto [m
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/naruto/naruto_apollo_v7/build/host-linux
+
+##############################################################
+
+
+
+Executing Make...........
+
+[34m[1m[info][0m make -j4 /home/naruto/naruto_apollo_v7/build/host-linux
+
+##############################################################
+
+[  0%] Building CXX object cyber/CMakeFiles/cyber_binary.dir/binary.cc.o
+[  0%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_run_mode_conf_cc_proto.dir/run_mode_conf.pb.cc.o
+[  0%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_choreography_conf_cc_proto.dir/choreography_conf.pb.cc.o
+[  0%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_perf_conf_cc_proto.dir/perf_conf.pb.cc.o
+[  0%] Linking CXX shared library libcyber_binary.so
+[  0%] Built target cyber_binary
+[  0%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_classic_conf_cc_proto.dir/classic_conf.pb.cc.o
+[  1%] Linking CXX shared library libcyber_proto_perf_conf_cc_proto.so
+[  1%] Linking CXX shared library libcyber_proto_run_mode_conf_cc_proto.so
+[  1%] Built target cyber_proto_perf_conf_cc_proto
+[  1%] Built target cyber_proto_run_mode_conf_cc_proto
+[  1%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_transport_conf_cc_proto.dir/transport_conf.pb.cc.o
+[  1%] Building CXX object cyber/base/CMakeFiles/cyber_base_atomic_hash_map.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  1%] Linking CXX shared library libcyber_proto_choreography_conf_cc_proto.so
+[  1%] Built target cyber_proto_choreography_conf_cc_proto
+[  1%] Building CXX object cyber/base/CMakeFiles/cyber_base_rw_lock_guard.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  2%] Linking CXX shared library libcyber_base_atomic_hash_map.so
+[  2%] Built target cyber_base_atomic_hash_map
+[  2%] Building CXX object cyber/base/CMakeFiles/cyber_base_macros.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  2%] Linking CXX shared library libcyber_base_rw_lock_guard.so
+[  2%] Built target cyber_base_rw_lock_guard
+[  2%] Building CXX object cyber/common/CMakeFiles/cyber_common_types.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  2%] Linking CXX shared library libcyber_proto_classic_conf_cc_proto.so
+[  2%] Linking CXX shared library libcyber_base_macros.so
+[  2%] Built target cyber_base_macros
+[  3%] Built target cyber_proto_classic_conf_cc_proto
+[  4%] Building CXX object cyber/common/CMakeFiles/cyber_common_util.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  4%] Building CXX object cyber/common/CMakeFiles/cyber_common_time_conversion.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  4%] Linking CXX shared library libcyber_common_types.so
+[  4%] Built target cyber_common_types
+[  4%] Building CXX object cyber/common/CMakeFiles/cyber_common_macros.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  4%] Linking CXX shared library libcyber_common_util.so
+[  4%] Linking CXX shared library libcyber_common_time_conversion.so
+[  4%] Built target cyber_common_util
+[  5%] Building CXX object cyber/service/CMakeFiles/cyber_service_service_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  5%] Built target cyber_common_time_conversion
+[  5%] Building CXX object cyber/base/CMakeFiles/cyber_base_wait_strategy.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  6%] Linking CXX shared library libcyber_common_macros.so
+[  6%] Built target cyber_common_macros
+[  6%] Building CXX object cyber/base/CMakeFiles/cyber_base_for_each.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  6%] Linking CXX shared library libcyber_service_service_base.so
+[  6%] Linking CXX shared library libcyber_base_wait_strategy.so
+[  6%] Built target cyber_service_service_base
+[  6%] Building CXX object cyber/time/CMakeFiles/cyber_time_duration.dir/duration.cc.o
+[  6%] Built target cyber_base_wait_strategy
+Scanning dependencies of target cyber_croutine_swap
+[  6%] Building ASM object cyber/croutine/CMakeFiles/cyber_croutine_swap.dir/detail/swap_x86_64.S.o
+[  6%] Building CXX object cyber/croutine/CMakeFiles/cyber_croutine_swap.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  6%] Linking CXX shared library libcyber_proto_transport_conf_cc_proto.so
+[  7%] Linking CXX shared library libcyber_base_for_each.so
+[  7%] Built target cyber_base_for_each
+[  8%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_qos_profile_cc_proto.dir/qos_profile.pb.cc.o
+[  8%] Built target cyber_proto_transport_conf_cc_proto
+[  8%] Building CXX object cyber/data/CMakeFiles/cyber_data_cache_buffer.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[  9%] Linking CXX shared library libcyber_croutine_swap.so
+[  9%] Built target cyber_croutine_swap
+[ 10%] Building CXX object cyber/data/CMakeFiles/cyber_data_data_fusion.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 10%] Linking CXX shared library libcyber_time_duration.so
+[ 10%] Linking CXX shared library libcyber_data_cache_buffer.so
+[ 10%] Built target cyber_time_duration
+[ 10%] Building CXX object cyber/data/CMakeFiles/cyber_data_data_visitor_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 10%] Built target cyber_data_cache_buffer
+[ 10%] Building CXX object cyber/data/CMakeFiles/cyber_data_data_visitor.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 10%] Linking CXX shared library libcyber_data_data_fusion.so
+[ 10%] Built target cyber_data_data_fusion
+[ 10%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_mutex_wrapper.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 10%] Linking CXX shared library libcyber_data_data_visitor_base.so
+[ 11%] Linking CXX shared library libcyber_data_data_visitor.so
+[ 11%] Built target cyber_data_data_visitor_base
+[ 11%] Building CXX object cyber/service/CMakeFiles/cyber_service_client_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 11%] Built target cyber_data_data_visitor
+[ 11%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_cv_wrapper.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 11%] Linking CXX shared library libcyber_scheduler_mutex_wrapper.so
+[ 11%] Built target cyber_scheduler_mutex_wrapper
+[ 11%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_proto_desc_cc_proto.dir/proto_desc.pb.cc.o
+[ 11%] Linking CXX shared library libcyber_service_client_base.so
+[ 12%] Linking CXX shared library libcyber_scheduler_cv_wrapper.so
+[ 12%] Built target cyber_service_client_base
+[ 12%] Building CXX object cyber/message/CMakeFiles/cyber_message_message_header.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 12%] Built target cyber_scheduler_cv_wrapper
+[ 13%] Building CXX object cyber/blocker/CMakeFiles/cyber_blocker_blocker.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 13%] Linking CXX shared library libcyber_proto_qos_profile_cc_proto.so
+[ 13%] Built target cyber_proto_qos_profile_cc_proto
+[ 13%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_clock_cc_proto.dir/clock.pb.cc.o
+[ 13%] Linking CXX shared library libcyber_message_message_header.so
+[ 13%] Linking CXX shared library libcyber_blocker_blocker.so
+[ 13%] Built target cyber_message_message_header
+[ 13%] Building CXX object cyber/base/CMakeFiles/cyber_base_signal.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 13%] Built target cyber_blocker_blocker
+[ 13%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_state.dir/state.cc.o
+[ 13%] Linking CXX shared library libcyber_base_signal.so
+[ 13%] Built target cyber_base_signal
+[ 13%] Building CXX object cyber/transport/common/CMakeFiles/cyber_transport_common_identity.dir/identity.cc.o
+[ 13%] Linking CXX shared library libcyber_transport_shm_state.so
+[ 13%] Built target cyber_transport_shm_state
+[ 14%] Building CXX object cyber/transport/message/CMakeFiles/cyber_transport_message_history_attributes.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 15%] Linking CXX shared library libcyber_transport_common_identity.so
+[ 15%] Linking CXX shared library libcyber_proto_proto_desc_cc_proto.so
+[ 15%] Built target cyber_transport_common_identity
+[ 15%] Building CXX object cyber/transport/qos/CMakeFiles/cyber_transport_qos_qos_profile_conf.dir/qos_profile_conf.cc.o
+[ 15%] Built target cyber_proto_proto_desc_cc_proto
+[ 15%] Building CXX object cyber/timer/CMakeFiles/cyber_timer_timer_task.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 15%] Linking CXX shared library libcyber_transport_message_history_attributes.so
+[ 15%] Built target cyber_transport_message_history_attributes
+[ 15%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_parameter_cc_proto.dir/parameter.pb.cc.o
+[ 16%] Linking CXX shared library libcyber_proto_clock_cc_proto.so
+[ 16%] Linking CXX shared library libcyber_timer_timer_task.so
+[ 16%] Built target cyber_proto_clock_cc_proto
+[ 16%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_record_cc_proto.dir/record.pb.cc.o
+[ 16%] Built target cyber_timer_timer_task
+[ 16%] Building CXX object cyber/class_loader/shared_library/CMakeFiles/cyber_class_loader_shared_library_exceptions.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 17%] Linking CXX shared library libcyber_class_loader_shared_library_exceptions.so
+[ 17%] Built target cyber_class_loader_shared_library_exceptions
+[ 18%] Building CXX object cyber/class_loader/utility/CMakeFiles/cyber_class_loader_utility_class_factory.dir/class_factory.cc.o
+[ 18%] Linking CXX shared library libcyber_transport_qos_qos_profile_conf.so
+[ 18%] Built target cyber_transport_qos_qos_profile_conf
+[ 19%] Building CXX object cyber/base/CMakeFiles/cyber_base_thread_pool.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 19%] Linking CXX shared library libcyber_class_loader_utility_class_factory.so
+[ 19%] Built target cyber_class_loader_utility_class_factory
+[ 19%] Building CXX object cyber/base/CMakeFiles/cyber_base_unbounded_queue.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 19%] Linking CXX shared library libcyber_base_thread_pool.so
+[ 19%] Built target cyber_base_thread_pool
+[ 19%] Building CXX object cyber/base/CMakeFiles/cyber_base_object_pool.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 20%] Linking CXX shared library libcyber_base_unbounded_queue.so
+[ 20%] Linking CXX shared library libcyber_proto_parameter_cc_proto.so
+[ 20%] Built target cyber_base_unbounded_queue
+[ 21%] Building CXX object cyber/base/CMakeFiles/cyber_base_reentrant_rw_lock.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 22%] Built target cyber_proto_parameter_cc_proto
+[ 22%] Building CXX object cyber/base/CMakeFiles/cyber_base_thread_safe_queue.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 22%] Linking CXX shared library libcyber_base_object_pool.so
+[ 22%] Built target cyber_base_object_pool
+[ 22%] Building CXX object cyber/parameter/CMakeFiles/cyber_parameter_parameter_service_names.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 22%] Linking CXX shared library libcyber_base_reentrant_rw_lock.so
+[ 22%] Linking CXX shared library libcyber_base_thread_safe_queue.so
+[ 22%] Built target cyber_base_reentrant_rw_lock
+[ 22%] Building CXX object cyber/record/CMakeFiles/cyber_record_section.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 22%] Linking CXX shared library libcyber_proto_record_cc_proto.so
+[ 22%] Built target cyber_base_thread_safe_queue
+[ 22%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_message.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 22%] Linking CXX shared library libcyber_parameter_parameter_service_names.so
+[ 22%] Built target cyber_proto_record_cc_proto
+[ 22%] Built target cyber_parameter_parameter_service_names
+[ 22%] Building CXX object cyber/io/CMakeFiles/cyber_io_poll_data.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 23%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_unit_test_cc_proto.dir/unit_test.pb.cc.o
+[ 23%] Linking CXX shared library libcyber_record_section.so
+[ 23%] Built target cyber_record_section
+[ 23%] Linking CXX shared library libcyber_record_record_message.so
+[ 23%] Building CXX object cyber/examples/proto/CMakeFiles/cyber_examples_proto_examples_cc_proto.dir/examples.pb.cc.o
+[ 23%] Built target cyber_record_record_message
+[ 23%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_play_param.dir/__/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 23%] Linking CXX shared library libcyber_io_poll_data.so
+[ 23%] Built target cyber_io_poll_data
+[ 24%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_screen.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 25%] Linking CXX shared library libcyber_tools_cyber_recorder_player_play_param.so
+[ 25%] Built target cyber_tools_cyber_recorder_player_play_param
+[ 26%] Building CXX object cyber/class_loader/test/CMakeFiles/cyber_class_loader_test_base.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 26%] Linking CXX shared library libcyber_tools_cyber_monitor_screen.so
+[ 26%] Built target cyber_tools_cyber_monitor_screen
+[ 26%] Building CXX object cyber/class_loader/shared_library/CMakeFiles/cyber_class_loader_shared_library_sample_lib.dir/sample.cc.o
+[ 26%] Linking CXX shared library libcyber_class_loader_shared_library_sample_lib.so
+[ 26%] Built target cyber_class_loader_shared_library_sample_lib
+[ 26%] Building CXX object cyber/common/CMakeFiles/cyber_common_log.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 26%] Linking CXX shared library libcyber_class_loader_test_base.so
+[ 26%] Built target cyber_class_loader_test_base
+[ 26%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_scheduler_conf_cc_proto.dir/scheduler_conf.pb.cc.o
+[ 26%] Linking CXX shared library libcyber_common_log.so
+[ 26%] Built target cyber_common_log
+[ 26%] Linking CXX shared library libcyber_proto_unit_test_cc_proto.so
+[ 26%] Building CXX object cyber/base/CMakeFiles/cyber_base_atomic_rw_lock.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 26%] Built target cyber_proto_unit_test_cc_proto
+[ 26%] Building CXX object cyber/common/CMakeFiles/cyber_common_file.dir/file.cc.o
+[ 27%] Linking CXX shared library libcyber_examples_proto_examples_cc_proto.so
+[ 27%] Built target cyber_examples_proto_examples_cc_proto
+[ 27%] Linking CXX shared library libcyber_base_atomic_rw_lock.so
+[ 27%] Building CXX object cyber/base/CMakeFiles/cyber_base_concurrent_object_pool.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 27%] Built target cyber_base_atomic_rw_lock
+[ 28%] Building CXX object cyber/base/CMakeFiles/cyber_base_bounded_queue.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 28%] Linking CXX shared library libcyber_base_concurrent_object_pool.so
+[ 28%] Linking CXX shared library libcyber_base_bounded_queue.so
+[ 28%] Built target cyber_base_concurrent_object_pool
+[ 28%] Building CXX object cyber/time/CMakeFiles/cyber_time_time.dir/time.cc.o
+[ 28%] Built target cyber_base_bounded_queue
+[ 28%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_component_conf_cc_proto.dir/component_conf.pb.cc.o
+[ 28%] Linking CXX shared library libcyber_proto_scheduler_conf_cc_proto.so
+[ 29%] Built target cyber_proto_scheduler_conf_cc_proto
+[ 29%] Building CXX object cyber/data/CMakeFiles/cyber_data_data_notifier.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 29%] Linking CXX shared library libcyber_time_time.so
+[ 29%] Built target cyber_time_time
+[ 29%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_pin_thread.dir/common/pin_thread.cc.o
+[ 29%] Linking CXX shared library libcyber_common_file.so
+[ 29%] Linking CXX shared library libcyber_data_data_notifier.so
+[ 29%] Built target cyber_common_file
+[ 29%] Building CXX object cyber/service/CMakeFiles/cyber_service_client.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 29%] Built target cyber_data_data_notifier
+[ 29%] Building CXX object cyber/message/CMakeFiles/cyber_message_protobuf_factory.dir/protobuf_factory.cc.o
+[ 29%] Linking CXX shared library libcyber_service_client.so
+[ 29%] Built target cyber_service_client
+[ 29%] Building CXX object cyber/blocker/CMakeFiles/cyber_blocker_blocker_manager.dir/blocker_manager.cc.o
+[ 29%] Linking CXX shared library libcyber_scheduler_pin_thread.so
+[ 29%] Built target cyber_scheduler_pin_thread
+[ 30%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_role_attributes_cc_proto.dir/role_attributes.pb.cc.o
+[ 30%] Linking CXX shared library libcyber_proto_component_conf_cc_proto.so
+[ 30%] Built target cyber_proto_component_conf_cc_proto
+[ 30%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_readable_info.dir/readable_info.cc.o
+[ 30%] Linking CXX shared library libcyber_blocker_blocker_manager.so
+[ 30%] Built target cyber_blocker_blocker_manager
+[ 30%] Building CXX object cyber/transport/message/CMakeFiles/cyber_transport_message_message_info.dir/message_info.cc.o
+[ 30%] Linking CXX shared library libcyber_transport_shm_readable_info.so
+[ 30%] Built target cyber_transport_shm_readable_info
+[ 30%] Building CXX object cyber/transport/message/CMakeFiles/cyber_transport_message_history.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 31%] Linking CXX shared library libcyber_transport_message_message_info.so
+[ 31%] Linking CXX shared library libcyber_transport_message_history.so
+[ 31%] Built target cyber_transport_message_message_info
+[ 31%] Building CXX object cyber/transport/rtps/CMakeFiles/cyber_transport_rtps_underlay_message.dir/underlay_message.cc.o
+[ 31%] Built target cyber_transport_message_history
+[ 31%] Building CXX object cyber/transport/qos/CMakeFiles/cyber_transport_qos_qos.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 31%] Linking CXX shared library libcyber_message_protobuf_factory.so
+[ 31%] Built target cyber_message_protobuf_factory
+[ 31%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_block.dir/block.cc.o
+[ 31%] Linking CXX shared library libcyber_transport_rtps_underlay_message.so
+[ 31%] Linking CXX shared library libcyber_transport_qos_qos.so
+[ 31%] Built target cyber_transport_rtps_underlay_message
+[ 31%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_notifier_base.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 31%] Linking CXX shared library libcyber_proto_role_attributes_cc_proto.so
+[ 31%] Built target cyber_transport_qos_qos
+[ 31%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_shm_conf.dir/shm_conf.cc.o
+[ 31%] Built target cyber_proto_role_attributes_cc_proto
+[ 31%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_graph.dir/container/graph.cc.o
+[ 31%] Linking CXX shared library libcyber_transport_shm_block.so
+[ 31%] Linking CXX shared library libcyber_transport_shm_notifier_base.so
+[ 31%] Built target cyber_transport_shm_block
+[ 31%] Built target cyber_transport_shm_notifier_base
+[ 31%] Building CXX object cyber/time/CMakeFiles/cyber_time_rate.dir/rate.cc.o
+[ 32%] Building CXX object cyber/timer/CMakeFiles/cyber_timer_timer_bucket.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 33%] Linking CXX shared library libcyber_transport_shm_shm_conf.so
+[ 33%] Built target cyber_transport_shm_shm_conf
+[ 33%] Building CXX object cyber/class_loader/shared_library/CMakeFiles/cyber_class_loader_shared_library_shared_library.dir/shared_library.cc.o
+[ 33%] Linking CXX shared library libcyber_timer_timer_bucket.so
+[ 33%] Built target cyber_timer_timer_bucket
+[ 33%] Building CXX object cyber/base/CMakeFiles/cyber_base_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 34%] Linking CXX shared library libcyber_time_rate.so
+[ 34%] Built target cyber_time_rate
+[ 35%] Building CXX object cyber/parameter/CMakeFiles/cyber_parameter_parameter.dir/parameter.cc.o
+[ 35%] Linking CXX shared library libcyber_class_loader_shared_library_shared_library.so
+[ 35%] Built target cyber_class_loader_shared_library_shared_library
+[ 35%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_file_base.dir/file/record_file_base.cc.o
+[ 35%] Linking CXX shared library libcyber_base_base.so
+[ 35%] Built target cyber_base_base
+[ 35%] Building CXX object cyber/record/CMakeFiles/cyber_record_header_builder.dir/header_builder.cc.o
+[ 35%] Linking CXX shared library libcyber_service_discovery_graph.so
+[ 35%] Built target cyber_service_discovery_graph
+[ 35%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 35%] Linking CXX shared library libcyber_record_record_base.so
+[ 35%] Built target cyber_record_record_base
+[ 35%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_dag_conf_cc_proto.dir/dag_conf.pb.cc.o
+[ 35%] Linking CXX shared library libcyber_record_record_file_base.so
+[ 35%] Built target cyber_record_record_file_base
+[ 35%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_renderable_message.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 35%] Linking CXX shared library libcyber_record_header_builder.so
+[ 35%] Built target cyber_record_header_builder
+[ 36%] Building CXX object cyber/class_loader/shared_library/CMakeFiles/libsample.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 36%] Linking CXX shared library libcyber_tools_cyber_monitor_renderable_message.so
+[ 36%] Linking CXX shared library libcyber_parameter_parameter.so
+[ 36%] Built target cyber_tools_cyber_monitor_renderable_message
+[ 36%] Building CXX object cyber/service_discovery/communication/CMakeFiles/cyber_service_discovery_communication_participant_listener.dir/participant_listener.cc.o
+[ 36%] Built target cyber_parameter_parameter
+[ 36%] Building CXX object cyber/common/CMakeFiles/cyber_common_environment.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 36%] Linking CXX shared library liblibsample.so
+[ 36%] Built target libsample
+[ 37%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_cyber_conf_cc_proto.dir/cyber_conf.pb.cc.o
+[ 37%] Linking CXX shared library libcyber_common_environment.so
+[ 37%] Built target cyber_common_environment
+[ 37%] Building CXX object cyber/data/CMakeFiles/cyber_data_channel_buffer.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 38%] Linking CXX shared library libcyber_data_channel_buffer.so
+[ 38%] Linking CXX shared library libcyber_proto_dag_conf_cc_proto.so
+[ 38%] Built target cyber_data_channel_buffer
+[ 38%] Building CXX object cyber/message/CMakeFiles/cyber_message_raw_message.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 38%] Built target cyber_proto_dag_conf_cc_proto
+[ 38%] Building CXX object cyber/message/CMakeFiles/cyber_message_py_message.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 38%] Linking CXX shared library libcyber_service_discovery_communication_participant_listener.so
+[ 38%] Built target cyber_service_discovery_communication_participant_listener
+[ 38%] Building CXX object cyber/message/CMakeFiles/cyber_message_protobuf_traits.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 39%] Linking CXX shared library libcyber_message_raw_message.so
+[ 39%] Built target cyber_message_raw_message
+[ 39%] Building CXX object cyber/blocker/CMakeFiles/cyber_blocker_intra_writer.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 39%] Linking CXX shared library libcyber_message_py_message.so
+[ 39%] Built target cyber_message_py_message
+[ 39%] Building CXX object cyber/blocker/CMakeFiles/cyber_blocker_intra_reader.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 40%] Linking CXX shared library libcyber_message_protobuf_traits.so
+[ 40%] Built target cyber_message_protobuf_traits
+[ 40%] Building CXX object cyber/proto/CMakeFiles/cyber_proto_topology_change_cc_proto.dir/topology_change.pb.cc.o
+[ 40%] Linking CXX shared library libcyber_blocker_intra_writer.so
+[ 40%] Linking CXX shared library libcyber_proto_cyber_conf_cc_proto.so
+[ 40%] Built target cyber_blocker_intra_writer
+[ 40%] Building CXX object cyber/node/CMakeFiles/cyber_node_writer_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 41%] Linking CXX shared library libcyber_blocker_intra_reader.so
+[ 41%] Built target cyber_proto_cyber_conf_cc_proto
+[ 41%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_role.dir/role/role.cc.o
+[ 41%] Built target cyber_blocker_intra_reader
+[ 41%] Building CXX object cyber/transport/rtps/CMakeFiles/cyber_transport_rtps_underlay_message_type.dir/underlay_message_type.cc.o
+[ 41%] Linking CXX shared library libcyber_node_writer_base.so
+[ 41%] Built target cyber_node_writer_base
+[ 41%] Building CXX object cyber/transport/rtps/CMakeFiles/cyber_transport_rtps_attributes_filler.dir/attributes_filler.cc.o
+[ 42%] Linking CXX shared library libcyber_transport_rtps_underlay_message_type.so
+[ 42%] Built target cyber_transport_rtps_underlay_message_type
+[ 43%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_segment.dir/segment.cc.o
+[ 44%] Linking CXX shared library libcyber_proto_topology_change_cc_proto.so
+[ 45%] Linking CXX shared library libcyber_service_discovery_role.so
+[ 45%] Built target cyber_proto_topology_change_cc_proto
+[ 45%] Building CXX object cyber/service_discovery/communication/CMakeFiles/cyber_service_discovery_communication_subscriber_listener.dir/subscriber_listener.cc.o
+[ 45%] Built target cyber_service_discovery_role
+[ 45%] Building CXX object cyber/class_loader/utility/CMakeFiles/cyber_class_loader_utility_class_loader_utility.dir/class_loader_utility.cc.o
+[ 45%] Linking CXX shared library libcyber_transport_shm_segment.so
+[ 45%] Built target cyber_transport_shm_segment
+[ 45%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_file_writer.dir/file/record_file_writer.cc.o
+[ 45%] Linking CXX shared library libcyber_transport_rtps_attributes_filler.so
+[ 45%] Built target cyber_transport_rtps_attributes_filler
+[ 45%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_file_reader.dir/file/record_file_reader.cc.o
+[ 45%] Linking CXX shared library libcyber_class_loader_utility_class_loader_utility.so
+[ 45%] Built target cyber_class_loader_utility_class_loader_utility
+[ 45%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_general_message_base.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 46%] Linking CXX shared library libcyber_service_discovery_communication_subscriber_listener.so
+[ 46%] Linking CXX shared library libcyber_tools_cyber_monitor_general_message_base.so
+[ 46%] Built target cyber_service_discovery_communication_subscriber_listener
+[ 46%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_cyber_topology_message.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 46%] Built target cyber_tools_cyber_monitor_general_message_base
+[ 47%] Building CXX object cyber/common/CMakeFiles/cyber_common_global_data.dir/global_data.cc.o
+[ 47%] Linking CXX shared library libcyber_tools_cyber_monitor_cyber_topology_message.so
+[ 47%] Built target cyber_tools_cyber_monitor_cyber_topology_message
+[ 48%] Building CXX object cyber/data/CMakeFiles/cyber_data_all_latest.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 48%] Linking CXX shared library libcyber_data_all_latest.so
+[ 48%] Linking CXX shared library libcyber_record_record_file_writer.so
+[ 48%] Built target cyber_data_all_latest
+[ 48%] Building CXX object cyber/data/CMakeFiles/cyber_data_data_dispatcher.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 49%] Linking CXX shared library libcyber_record_record_file_reader.so
+[ 49%] Built target cyber_record_record_file_writer
+[ 49%] Building CXX object cyber/message/CMakeFiles/cyber_message_raw_message_traits.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 49%] Built target cyber_record_record_file_reader
+[ 49%] Building CXX object cyber/message/CMakeFiles/cyber_message_py_message_traits.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 49%] Linking CXX shared library libcyber_data_data_dispatcher.so
+[ 49%] Built target cyber_data_data_dispatcher
+[ 49%] Building CXX object cyber/transport/rtps/CMakeFiles/cyber_transport_rtps_sub_listener.dir/sub_listener.cc.o
+[ 49%] Linking CXX shared library libcyber_message_raw_message_traits.so
+[ 49%] Linking CXX shared library libcyber_message_py_message_traits.so
+[ 49%] Built target cyber_message_raw_message_traits
+[ 49%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_xsi_segment.dir/xsi_segment.cc.o
+[ 49%] Built target cyber_message_py_message_traits
+[ 49%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_posix_segment.dir/posix_segment.cc.o
+[ 49%] Linking CXX shared library libcyber_common_global_data.so
+[ 49%] Built target cyber_common_global_data
+[ 49%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_warehouse_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 49%] Linking CXX shared library libcyber_service_discovery_warehouse_base.so
+[ 49%] Linking CXX shared library libcyber_transport_shm_xsi_segment.so
+[ 49%] Built target cyber_service_discovery_warehouse_base
+[ 49%] Building CXX object cyber/logger/CMakeFiles/cyber_logger_logger_util.dir/logger_util.cc.o
+[ 49%] Linking CXX shared library libcyber_transport_shm_posix_segment.so
+[ 49%] Built target cyber_transport_shm_xsi_segment
+[ 50%] Building CXX object cyber/time/CMakeFiles/cyber_time_clock.dir/clock.cc.o
+[ 50%] Built target cyber_transport_shm_posix_segment
+[ 50%] Building CXX object cyber/class_loader/CMakeFiles/cyber_class_loader_class_loader_register_macro.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 50%] Linking CXX shared library libcyber_class_loader_class_loader_register_macro.so
+[ 50%] Built target cyber_class_loader_class_loader_register_macro
+[ 51%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_reader.dir/record_reader.cc.o
+[ 51%] Linking CXX shared library libcyber_transport_rtps_sub_listener.so
+[ 51%] Built target cyber_transport_rtps_sub_listener
+[ 51%] Building CXX object cyber/tools/cyber_recorder/CMakeFiles/cyber_tools_cyber_recorder_info.dir/info.cc.o
+[ 51%] Linking CXX shared library libcyber_logger_logger_util.so
+[ 51%] Built target cyber_logger_logger_util
+[ 51%] Building CXX object cyber/common/CMakeFiles/cyber_common_common.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 51%] Linking CXX shared library libcyber_time_clock.so
+[ 51%] Built target cyber_time_clock
+[ 51%] Building CXX object cyber/event/CMakeFiles/cyber_event_perf_event.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 52%] Linking CXX shared library libcyber_common_common.so
+[ 52%] Built target cyber_common_common
+[ 52%] Building CXX object cyber/data/CMakeFiles/cyber_data_data.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 52%] Linking CXX shared library libcyber_event_perf_event.so
+[ 52%] Built target cyber_event_perf_event
+[ 53%] Building CXX object cyber/message/CMakeFiles/cyber_message_message_traits.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 53%] Linking CXX shared library libcyber_data_data.so
+[ 53%] Built target cyber_data_data
+[ 53%] Linking CXX shared library libcyber_tools_cyber_recorder_info.so
+[ 53%] Building CXX object cyber/transport/common/CMakeFiles/cyber_transport_common_endpoint.dir/endpoint.cc.o
+[ 53%] Linking CXX shared library libcyber_message_message_traits.so
+[ 53%] Linking CXX shared library libcyber_record_record_reader.so
+[ 53%] Built target cyber_message_message_traits
+[ 53%] Building CXX object cyber/transport/rtps/CMakeFiles/cyber_transport_rtps_participant.dir/participant.cc.o
+[ 53%] Built target cyber_tools_cyber_recorder_info
+[ 53%] Building CXX object cyber/transport/message/CMakeFiles/cyber_transport_message_listener_handler.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 53%] Built target cyber_record_record_reader
+[ 54%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_multicast_notifier.dir/multicast_notifier.cc.o
+[ 54%] Linking CXX shared library libcyber_transport_message_listener_handler.so
+[ 54%] Built target cyber_transport_message_listener_handler
+[ 54%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_condition_notifier.dir/condition_notifier.cc.o
+[ 54%] Linking CXX shared library libcyber_transport_shm_condition_notifier.so
+[ 54%] Built target cyber_transport_shm_condition_notifier
+[ 54%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_segment_factory.dir/segment_factory.cc.o
+[ 54%] Linking CXX shared library libcyber_transport_common_endpoint.so
+[ 54%] Built target cyber_transport_common_endpoint
+[ 54%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_single_value_warehouse.dir/container/single_value_warehouse.cc.o
+[ 54%] Linking CXX shared library libcyber_transport_shm_multicast_notifier.so
+[ 54%] Built target cyber_transport_shm_multicast_notifier
+[ 55%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_multi_value_warehouse.dir/container/multi_value_warehouse.cc.o
+[ 56%] Linking CXX shared library libcyber_transport_rtps_participant.so
+[ 56%] Built target cyber_transport_rtps_participant
+[ 56%] Building CXX object cyber/logger/CMakeFiles/cyber_logger_log_file_object.dir/log_file_object.cc.o
+[ 56%] Linking CXX shared library libcyber_transport_shm_segment_factory.so
+[ 56%] Built target cyber_transport_shm_segment_factory
+[ 56%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_writer.dir/record_writer.cc.o
+[ 56%] Linking CXX shared library libcyber_service_discovery_single_value_warehouse.so
+[ 56%] Built target cyber_service_discovery_single_value_warehouse
+[ 56%] Building CXX object cyber/record/CMakeFiles/cyber_record_record_viewer.dir/record_viewer.cc.o
+[ 56%] Linking CXX shared library libcyber_service_discovery_multi_value_warehouse.so
+[ 56%] Built target cyber_service_discovery_multi_value_warehouse
+[ 56%] Building CXX object cyber/CMakeFiles/cyber_state.dir/state.cc.o
+[ 56%] Linking CXX shared library libcyber_logger_log_file_object.so
+[ 56%] Built target cyber_logger_log_file_object
+[ 57%] Building CXX object cyber/croutine/CMakeFiles/cyber_croutine_routine_context.dir/detail/routine_context.cc.o
+[ 57%] Linking CXX shared library libcyber_state.so
+[ 57%] Built target cyber_state
+[ 57%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_receiver_interface.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 57%] Linking CXX shared library libcyber_croutine_routine_context.so
+[ 57%] Built target cyber_croutine_routine_context
+[ 57%] Building CXX object cyber/transport/dispatcher/CMakeFiles/cyber_transport_dispatcher_dispatcher.dir/dispatcher.cc.o
+[ 57%] Linking CXX shared library libcyber_transport_receiver_receiver_interface.so
+[ 57%] Built target cyber_transport_receiver_receiver_interface
+[ 57%] Building CXX object cyber/transport/shm/CMakeFiles/cyber_transport_shm_notifier_factory.dir/notifier_factory.cc.o
+[ 57%] Linking CXX shared library libcyber_record_record_viewer.so
+[ 57%] Built target cyber_record_record_viewer
+[ 57%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_manager.dir/specific_manager/manager.cc.o
+[ 58%] Linking CXX shared library libcyber_record_record_writer.so
+[ 58%] Built target cyber_record_record_writer
+[ 59%] Building CXX object cyber/logger/CMakeFiles/cyber_logger_async_logger.dir/async_logger.cc.o
+[ 60%] Linking CXX shared library libcyber_transport_shm_notifier_factory.so
+[ 60%] Built target cyber_transport_shm_notifier_factory
+[ 60%] Building CXX object cyber/logger/CMakeFiles/cyber_logger_logger.dir/logger.cc.o
+[ 60%] Linking CXX shared library libcyber_transport_dispatcher_dispatcher.so
+[ 60%] Built target cyber_transport_dispatcher_dispatcher
+[ 60%] Building CXX object cyber/record/CMakeFiles/cyber_record_record.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 61%] Linking CXX shared library libcyber_record_record.so
+[ 61%] Built target cyber_record_record
+[ 62%] Building CXX object cyber/tools/cyber_recorder/CMakeFiles/cyber_tools_cyber_recorder_spliter.dir/spliter.cc.o
+[ 62%] Linking CXX shared library libcyber_logger_async_logger.so
+[ 63%] Linking CXX shared library libcyber_logger_logger.so
+[ 63%] Built target cyber_logger_async_logger
+[ 63%] Building CXX object cyber/tools/cyber_recorder/CMakeFiles/cyber_tools_cyber_recorder_recoverer.dir/recoverer.cc.o
+[ 63%] Built target cyber_logger_logger
+[ 64%] Building CXX object cyber/event/CMakeFiles/cyber_event_perf_event_cache.dir/perf_event_cache.cc.o
+[ 64%] Linking CXX shared library libcyber_tools_cyber_recorder_spliter.so
+[ 64%] Built target cyber_tools_cyber_recorder_spliter
+[ 65%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_shm_receiver.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 65%] Linking CXX shared library libcyber_service_discovery_manager.so
+[ 65%] Built target cyber_service_discovery_manager
+[ 65%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_rtps_receiver.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 65%] Linking CXX shared library libcyber_transport_receiver_shm_receiver.so
+[ 65%] Built target cyber_transport_receiver_shm_receiver
+[ 65%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_intra_receiver.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 65%] Linking CXX shared library libcyber_transport_receiver_rtps_receiver.so
+[ 65%] Built target cyber_transport_receiver_rtps_receiver
+[ 66%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_hybrid_receiver.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 66%] Linking CXX shared library libcyber_tools_cyber_recorder_recoverer.so
+[ 66%] Linking CXX shared library libcyber_transport_receiver_intra_receiver.so
+[ 66%] Built target cyber_tools_cyber_recorder_recoverer
+[ 67%] Building CXX object cyber/transport/dispatcher/CMakeFiles/cyber_transport_dispatcher_rtps_dispatcher.dir/rtps_dispatcher.cc.o
+[ 67%] Built target cyber_transport_receiver_intra_receiver
+[ 67%] Building CXX object cyber/transport/dispatcher/CMakeFiles/cyber_transport_dispatcher_intra_dispatcher.dir/intra_dispatcher.cc.o
+[ 67%] Linking CXX shared library libcyber_event_perf_event_cache.so
+[ 67%] Linking CXX shared library libcyber_transport_receiver_hybrid_receiver.so
+[ 67%] Built target cyber_event_perf_event_cache
+[ 67%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_node_manager.dir/specific_manager/node_manager.cc.o
+[ 67%] Built target cyber_transport_receiver_hybrid_receiver
+[ 68%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_channel_manager.dir/specific_manager/channel_manager.cc.o
+[ 68%] Linking CXX shared library libcyber_transport_dispatcher_intra_dispatcher.so
+[ 68%] Built target cyber_transport_dispatcher_intra_dispatcher
+[ 68%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_service_manager.dir/specific_manager/service_manager.cc.o
+[ 68%] Linking CXX shared library libcyber_service_discovery_node_manager.so
+[ 68%] Built target cyber_service_discovery_node_manager
+[ 68%] Building CXX object cyber/croutine/CMakeFiles/cyber_croutine_routine_factory.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 68%] Linking CXX shared library libcyber_croutine_routine_factory.so
+[ 68%] Built target cyber_croutine_routine_factory
+[ 68%] Building CXX object cyber/transport/receiver/CMakeFiles/cyber_transport_receiver_receiver.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 69%] Linking CXX shared library libcyber_transport_receiver_receiver.so
+[ 69%] Built target cyber_transport_receiver_receiver
+[ 69%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_transmitter_interface.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 69%] Linking CXX shared library libcyber_transport_dispatcher_rtps_dispatcher.so
+[ 69%] Linking CXX shared library libcyber_service_discovery_channel_manager.so
+[ 70%] Linking CXX shared library libcyber_transport_transmitter_transmitter_interface.so
+[ 70%] Built target cyber_transport_dispatcher_rtps_dispatcher
+[ 70%] Building CXX object cyber/croutine/CMakeFiles/cyber_croutine_croutine.dir/croutine.cc.o
+[ 70%] Built target cyber_transport_transmitter_transmitter_interface
+[ 70%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_shm_transmitter.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 70%] Built target cyber_service_discovery_channel_manager
+[ 70%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_rtps_transmitter.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 70%] Linking CXX shared library libcyber_transport_transmitter_shm_transmitter.so
+[ 71%] Linking CXX shared library libcyber_transport_transmitter_rtps_transmitter.so
+[ 71%] Built target cyber_transport_transmitter_shm_transmitter
+[ 71%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_intra_transmitter.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 71%] Built target cyber_transport_transmitter_rtps_transmitter
+[ 72%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_hybrid_transmitter.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 72%] Linking CXX shared library libcyber_service_discovery_service_manager.so
+[ 72%] Linking CXX shared library libcyber_transport_transmitter_intra_transmitter.so
+[ 72%] Linking CXX shared library libcyber_transport_transmitter_hybrid_transmitter.so
+[ 72%] Built target cyber_service_discovery_service_manager
+[ 73%] Building CXX object cyber/service_discovery/CMakeFiles/cyber_service_discovery_topology_manager.dir/topology_manager.cc.o
+[ 73%] Built target cyber_transport_transmitter_intra_transmitter
+[ 73%] Built target cyber_transport_transmitter_hybrid_transmitter
+[ 73%] Building CXX object cyber/transport/transmitter/CMakeFiles/cyber_transport_transmitter_transmitter.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 73%] Linking CXX shared library libcyber_transport_transmitter_transmitter.so
+[ 73%] Built target cyber_transport_transmitter_transmitter
+[ 73%] Linking CXX shared library libcyber_croutine_croutine.so
+[ 73%] Built target cyber_croutine_croutine
+[ 73%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_processor_context.dir/processor_context.cc.o
+[ 73%] Linking CXX shared library libcyber_scheduler_processor_context.so
+[ 73%] Built target cyber_scheduler_processor_context
+[ 74%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_processor.dir/processor.cc.o
+[ 74%] Linking CXX shared library libcyber_scheduler_processor.so
+[ 74%] Linking CXX shared library libcyber_service_discovery_topology_manager.so
+[ 74%] Built target cyber_scheduler_processor
+[ 74%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_scheduler.dir/scheduler.cc.o
+[ 74%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_classic_context.dir/policy/classic_context.cc.o
+[ 75%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_choreography_context.dir/policy/choreography_context.cc.o
+[ 75%] Built target cyber_service_discovery_topology_manager
+[ 75%] Linking CXX shared library libcyber_scheduler_choreography_context.so
+[ 75%] Built target cyber_scheduler_choreography_context
+[ 75%] Linking CXX shared library libcyber_scheduler_classic_context.so
+[ 75%] Built target cyber_scheduler_classic_context
+[ 76%] Linking CXX shared library libcyber_scheduler_scheduler.so
+[ 76%] Built target cyber_scheduler_scheduler
+[ 76%] Building CXX object cyber/service/CMakeFiles/cyber_service_service.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 76%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_scheduler_choreography.dir/policy/scheduler_choreography.cc.o
+[ 76%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_scheduler_classic.dir/policy/scheduler_classic.cc.o
+[ 76%] Linking CXX shared library libcyber_service_service.so
+[ 76%] Built target cyber_service_service
+[ 76%] Linking CXX shared library libcyber_scheduler_scheduler_classic.so
+[ 76%] Linking CXX shared library libcyber_scheduler_scheduler_choreography.so
+[ 76%] Built target cyber_scheduler_scheduler_classic
+[ 76%] Built target cyber_scheduler_scheduler_choreography
+[ 76%] Building CXX object cyber/scheduler/CMakeFiles/cyber_scheduler_scheduler_factory.dir/scheduler_factory.cc.o
+[ 77%] Linking CXX shared library libcyber_scheduler_scheduler_factory.so
+[ 77%] Built target cyber_scheduler_scheduler_factory
+[ 77%] Building CXX object cyber/sysmo/CMakeFiles/cyber_sysmo_sysmo.dir/sysmo.cc.o
+[ 77%] Building CXX object cyber/task/CMakeFiles/cyber_task_task_manager.dir/task_manager.cc.o
+[ 77%] Building CXX object cyber/transport/dispatcher/CMakeFiles/cyber_transport_dispatcher_shm_dispatcher.dir/shm_dispatcher.cc.o
+[ 77%] Building CXX object cyber/io/CMakeFiles/cyber_io_poller.dir/poller.cc.o
+[ 78%] Linking CXX shared library libcyber_sysmo_sysmo.so
+[ 78%] Built target cyber_sysmo_sysmo
+[ 78%] Linking CXX shared library libcyber_task_task_manager.so
+[ 78%] Built target cyber_task_task_manager
+[ 78%] Building CXX object cyber/task/CMakeFiles/cyber_task_task.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 78%] Linking CXX shared library libcyber_io_poller.so
+[ 78%] Built target cyber_io_poller
+[ 78%] Building CXX object cyber/io/CMakeFiles/cyber_io_poll_handler.dir/poll_handler.cc.o
+[ 78%] Linking CXX shared library libcyber_task_task.so
+[ 78%] Built target cyber_task_task
+[ 78%] Building CXX object cyber/timer/CMakeFiles/cyber_timer_timing_wheel.dir/timing_wheel.cc.o
+[ 78%] Linking CXX shared library libcyber_transport_dispatcher_shm_dispatcher.so
+[ 78%] Built target cyber_transport_dispatcher_shm_dispatcher
+[ 78%] Building CXX object cyber/transport/CMakeFiles/cyber_transport_transport.dir/transport.cc.o
+[ 79%] Linking CXX shared library libcyber_io_poll_handler.so
+[ 79%] Built target cyber_io_poll_handler
+[ 79%] Building CXX object cyber/io/CMakeFiles/cyber_io_session.dir/session.cc.o
+[ 79%] Linking CXX shared library libcyber_io_session.so
+[ 80%] Linking CXX shared library libcyber_timer_timing_wheel.so
+[ 80%] Built target cyber_io_session
+[ 81%] Building CXX object cyber/io/CMakeFiles/cyber_io_io.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 81%] Built target cyber_timer_timing_wheel
+[ 81%] Building CXX object cyber/timer/CMakeFiles/cyber_timer_timer.dir/timer.cc.o
+[ 81%] Linking CXX shared library libcyber_io_io.so
+[ 81%] Built target cyber_io_io
+[ 81%] Linking CXX shared library libcyber_transport_transport.so
+[ 81%] Built target cyber_transport_transport
+[ 81%] Building CXX object cyber/node/CMakeFiles/cyber_node_writer.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 81%] Building CXX object cyber/node/CMakeFiles/cyber_node_reader_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 82%] Linking CXX shared library libcyber_node_writer.so
+[ 82%] Linking CXX shared library libcyber_node_reader_base.so
+[ 82%] Linking CXX shared library libcyber_timer_timer.so
+[ 82%] Built target cyber_timer_timer
+[ 82%] Built target cyber_node_reader_base
+[ 82%] Building CXX object cyber/node/CMakeFiles/cyber_node_reader.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 82%] Built target cyber_node_writer
+[ 82%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_play_task.dir/play_task.cc.o
+[ 82%] Linking CXX shared library libcyber_node_reader.so
+[ 82%] Built target cyber_node_reader
+[ 83%] Building CXX object cyber/node/CMakeFiles/cyber_node_node_service_impl.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 83%] Building CXX object cyber/node/CMakeFiles/cyber_node_node_channel_impl.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 83%] Linking CXX shared library libcyber_node_node_channel_impl.so
+[ 83%] Linking CXX shared library libcyber_node_node_service_impl.so
+[ 83%] Built target cyber_node_node_channel_impl
+[ 83%] Built target cyber_node_node_service_impl
+[ 83%] Building CXX object cyber/node/CMakeFiles/cyber_node_node.dir/node.cc.o
+[ 83%] Linking CXX shared library libcyber_tools_cyber_recorder_player_play_task.so
+[ 83%] Built target cyber_tools_cyber_recorder_player_play_task
+[ 83%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_play_task_buffer.dir/play_task_buffer.cc.o
+[ 83%] Linking CXX shared library libcyber_node_node.so
+[ 83%] Built target cyber_node_node
+[ 83%] Building CXX object cyber/CMakeFiles/cyber_init.dir/init.cc.o
+[ 83%] Building CXX object cyber/parameter/CMakeFiles/cyber_parameter_parameter_server.dir/parameter_server.cc.o
+[ 83%] Building CXX object cyber/parameter/CMakeFiles/cyber_parameter_parameter_client.dir/parameter_client.cc.o
+[ 83%] Linking CXX shared library libcyber_tools_cyber_recorder_player_play_task_buffer.so
+[ 83%] Built target cyber_tools_cyber_recorder_player_play_task_buffer
+[ 84%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_play_task_consumer.dir/play_task_consumer.cc.o
+[ 84%] Linking CXX shared library libcyber_tools_cyber_recorder_player_play_task_consumer.so
+[ 84%] Built target cyber_tools_cyber_recorder_player_play_task_consumer
+[ 84%] Linking CXX shared library libcyber_init.so
+[ 84%] Built target cyber_init
+[ 84%] Building CXX object cyber/class_loader/CMakeFiles/cyber_class_loader_class_loader.dir/class_loader.cc.o
+[ 84%] Linking CXX shared library libcyber_class_loader_class_loader.so
+[ 84%] Built target cyber_class_loader_class_loader
+[ 84%] Building CXX object cyber/component/CMakeFiles/cyber_component_component_base.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 85%] Building CXX object cyber/class_loader/CMakeFiles/cyber_class_loader_class_loader_manager.dir/class_loader_manager.cc.o
+[ 86%] Linking CXX shared library libcyber_component_component_base.so
+[ 86%] Linking CXX shared library libcyber_class_loader_class_loader_manager.so
+[ 86%] Built target cyber_class_loader_class_loader_manager
+[ 86%] Building CXX object cyber/class_loader/test/CMakeFiles/cyber_class_loader_test_plugin2.dir/plugin2.cc.o
+[ 86%] Linking CXX shared library libcyber_class_loader_test_plugin2.so
+[ 86%] Built target cyber_class_loader_test_plugin2
+[ 86%] Building CXX object cyber/class_loader/test/CMakeFiles/cyber_class_loader_test_plugin1.dir/plugin1.cc.o
+[ 86%] Linking CXX shared library libcyber_class_loader_test_plugin1.so
+[ 86%] Built target cyber_component_component_base
+[ 86%] Building CXX object cyber/component/CMakeFiles/cyber_component_timer_component.dir/timer_component.cc.o
+[ 86%] Built target cyber_class_loader_test_plugin1
+[ 86%] Building CXX object cyber/component/CMakeFiles/cyber_component_component.dir/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 86%] Linking CXX shared library libcyber_component_component.so
+[ 86%] Built target cyber_component_component
+[ 86%] Linking CXX shared library libcyber_component_timer_component.so
+[ 86%] Built target cyber_component_timer_component
+[ 87%] Linking CXX shared library libcyber_parameter_parameter_server.so
+[ 87%] Linking CXX shared library libcyber_parameter_parameter_client.so
+[ 87%] Built target cyber_parameter_parameter_server
+[ 87%] Built target cyber_parameter_parameter_client
+[ 87%] Building CXX object cyber/CMakeFiles/cyber_cyber_core.dir/cyber.cc.o
+[ 87%] Linking CXX shared library libcyber_cyber_core.so
+[ 87%] Built target cyber_cyber_core
+[ 87%] Building CXX object cyber/CMakeFiles/cyber_cyber.dir/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 87%] Building CXX object cyber/mainboard/CMakeFiles/mainboard.dir/mainboard.cc.o
+[ 87%] Building CXX object cyber/io/CMakeFiles/udp_echo_client.dir/example/udp_echo_client.cc.o
+[ 88%] Building CXX object cyber/io/CMakeFiles/tcp_echo_server.dir/example/tcp_echo_server.cc.o
+[ 88%] Linking CXX shared library libcyber_cyber.so
+[ 88%] Building CXX object cyber/mainboard/CMakeFiles/mainboard.dir/module_argument.cc.o
+[ 88%] Linking CXX executable udp_echo_client
+[ 88%] Linking CXX executable tcp_echo_server
+[ 88%] Built target udp_echo_client
+[ 88%] Building CXX object cyber/io/CMakeFiles/tcp_echo_client.dir/example/tcp_echo_client.cc.o
+[ 88%] Built target tcp_echo_server
+[ 88%] Building CXX object cyber/io/CMakeFiles/udp_echo_server.dir/example/udp_echo_server.cc.o
+[ 88%] Built target cyber_cyber
+[ 88%] Building CXX object cyber/mainboard/CMakeFiles/mainboard.dir/module_controller.cc.o
+[ 89%] Building CXX object cyber/python/internal/CMakeFiles/cyber_python_internal_py_timer.dir/py_timer.cc.o
+[ 89%] Linking CXX executable tcp_echo_client
+[ 90%] Linking CXX executable udp_echo_server
+[ 90%] Built target tcp_echo_client
+[ 90%] Building CXX object cyber/python/internal/CMakeFiles/cyber_python_internal_py_time.dir/py_time.cc.o
+[ 90%] Linking CXX executable mainboard
+[ 90%] Built target udp_echo_server
+[ 90%] Building CXX object cyber/python/internal/CMakeFiles/cyber_python_internal_py_record.dir/py_record.cc.o
+[ 90%] Built target mainboard
+[ 90%] Building CXX object cyber/python/internal/CMakeFiles/cyber_python_internal_py_cyber.dir/py_cyber.cc.o
+[ 90%] Linking CXX shared library libcyber_python_internal_py_timer.so
+[ 90%] Built target cyber_python_internal_py_timer
+[ 90%] Building CXX object cyber/tools/cyber_recorder/CMakeFiles/cyber_tools_cyber_recorder_recorder.dir/recorder.cc.o
+[ 90%] Linking CXX shared library libcyber_python_internal_py_record.so
+[ 90%] Built target cyber_python_internal_py_record
+[ 90%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_play_task_producer.dir/play_task_producer.cc.o
+[ 90%] Linking CXX shared library libcyber_python_internal_py_time.so
+[ 90%] Built target cyber_python_internal_py_time
+[ 91%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_general_message.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 91%] Linking CXX shared library libcyber_tools_cyber_monitor_general_message.so
+[ 91%] Built target cyber_tools_cyber_monitor_general_message
+[ 91%] Building CXX object cyber/examples/common_component_example/CMakeFiles/channel_test_writer.dir/channel_test_writer.cc.o
+[ 91%] Linking CXX shared library libcyber_tools_cyber_recorder_player_play_task_producer.so
+[ 91%] Built target cyber_tools_cyber_recorder_player_play_task_producer
+[ 91%] Building CXX object cyber/examples/common_component_example/CMakeFiles/cyber_examples_common_component_example_common_component_example_lib.dir/common_component_example.cc.o
+[ 91%] Linking CXX shared library libcyber_tools_cyber_recorder_recorder.so
+[ 91%] Built target cyber_tools_cyber_recorder_recorder
+[ 92%] Building CXX object cyber/examples/common_component_example/CMakeFiles/channel_prediction_writer.dir/channel_prediction_writer.cc.o
+[ 92%] Linking CXX executable channel_test_writer
+[ 92%] Built target channel_test_writer
+[ 92%] Building CXX object cyber/examples/timer_component_example/CMakeFiles/cyber_examples_timer_component_example_timer_component_example_lib.dir/timer_component_example.cc.o
+[ 92%] Linking CXX shared library libcyber_python_internal_py_cyber.so
+[ 92%] Built target cyber_python_internal_py_cyber
+[ 92%] Building CXX object cyber/examples/CMakeFiles/record.dir/record.cc.o
+[ 92%] Linking CXX executable channel_prediction_writer
+[ 92%] Built target channel_prediction_writer
+[ 92%] Building CXX object cyber/examples/CMakeFiles/service.dir/service.cc.o
+[ 92%] Linking CXX shared library libcyber_examples_common_component_example_common_component_example_lib.so
+[ 92%] Built target cyber_examples_common_component_example_common_component_example_lib
+[ 93%] Building CXX object cyber/examples/CMakeFiles/paramserver.dir/paramserver.cc.o
+[ 93%] Linking CXX executable record
+[ 93%] Linking CXX shared library libcyber_examples_timer_component_example_timer_component_example_lib.so
+[ 93%] Built target record
+[ 93%] Building CXX object cyber/examples/CMakeFiles/listener.dir/listener.cc.o
+[ 93%] Built target cyber_examples_timer_component_example_timer_component_example_lib
+[ 93%] Building CXX object cyber/examples/CMakeFiles/talker.dir/talker.cc.o
+[ 93%] Linking CXX executable paramserver
+[ 93%] Built target paramserver
+[ 93%] Building CXX object cyber/python/internal/CMakeFiles/_cyber_timer_wrapper.dir/py_timer.cc.o
+[ 93%] Linking CXX shared library lib_cyber_timer_wrapper.so
+[ 93%] Linking CXX executable talker
+[ 93%] Built target _cyber_timer_wrapper
+[ 93%] Building CXX object cyber/python/internal/CMakeFiles/_cyber_time_wrapper.dir/py_time.cc.o
+[ 94%] Linking CXX executable service
+[ 94%] Built target talker
+[ 94%] Building CXX object cyber/python/internal/CMakeFiles/_cyber_record_wrapper.dir/py_record.cc.o
+[ 94%] Built target service
+[ 94%] Building CXX object cyber/python/internal/CMakeFiles/cyber_python_internal_py_parameter.dir/py_parameter.cc.o
+[ 94%] Linking CXX shared library lib_cyber_record_wrapper.so
+[ 95%] Linking CXX executable listener
+[ 95%] Built target _cyber_record_wrapper
+[ 95%] Building CXX object cyber/python/internal/CMakeFiles/_cyber_wrapper.dir/py_cyber.cc.o
+[ 95%] Built target listener
+[ 95%] Building CXX object cyber/tools/cyber_recorder/player/CMakeFiles/cyber_tools_cyber_recorder_player_player.dir/player.cc.o
+[ 96%] Linking CXX shared library lib_cyber_time_wrapper.so
+[ 96%] Built target _cyber_time_wrapper
+[ 96%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_tools_cyber_monitor_general_channel_message.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 96%] Linking CXX shared library libcyber_tools_cyber_monitor_general_channel_message.so
+[ 97%] Linking CXX shared library libcyber_tools_cyber_recorder_player_player.so
+[ 97%] Built target cyber_tools_cyber_recorder_player_player
+[ 97%] Building CXX object cyber/examples/common_component_example/CMakeFiles/libcommon_component_example.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 97%] Linking CXX shared library liblibcommon_component_example.so
+[ 97%] Built target cyber_tools_cyber_monitor_general_channel_message
+[ 97%] Building CXX object cyber/examples/timer_component_example/CMakeFiles/libtimer_component_example.dir/__/__/__/tools/ApolloBuildEnv/virtual_cc.cc.o
+[ 97%] Linking CXX shared library liblibtimer_component_example.so
+[ 98%] Linking CXX shared library libcyber_python_internal_py_parameter.so
+[ 98%] Built target cyber_python_internal_py_parameter
+[ 98%] Building CXX object cyber/python/internal/CMakeFiles/_cyber_parameter_wrapper.dir/py_parameter.cc.o
+[ 98%] Built target libcommon_component_example
+[ 98%] Building CXX object cyber/tools/cyber_recorder/CMakeFiles/cyber_recorder.dir/main.cc.o
+[ 98%] Built target libtimer_component_example
+[ 98%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/cyber_topology_message.cc.o
+/home/naruto/naruto_apollo_v7/cyber/tools/cyber_monitor/cyber_topology_message.cc: In member function ‘virtual int CyberTopologyMessage::Render(const Screen*, int)’:
+/home/naruto/naruto_apollo_v7/cyber/tools/cyber_monitor/cyber_topology_message.cc:230:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+230 |   register int tmp = page_index_ * page_item_count_;
+|                ^~~
+/home/naruto/naruto_apollo_v7/cyber/tools/cyber_monitor/cyber_topology_message.cc:231:16: warning: ISO C++17 does not allow ‘register’ storage class specifier [-Wregister]
+231 |   register int line = 0;
+|                ^~~~
+[ 98%] Linking CXX executable cyber_recorder
+[ 98%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/general_channel_message.cc.o
+[ 98%] Built target cyber_recorder
+[ 99%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/general_message.cc.o
+[ 99%] Linking CXX shared library lib_cyber_parameter_wrapper.so
+[ 99%] Linking CXX shared library lib_cyber_wrapper.so
+[ 99%] Built target _cyber_parameter_wrapper
+[ 99%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/general_message_base.cc.o
+[ 99%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/main.cc.o
+[ 99%] Built target _cyber_wrapper
+[ 99%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/renderable_message.cc.o
+[ 99%] Building CXX object cyber/tools/cyber_monitor/CMakeFiles/cyber_monitor.dir/screen.cc.o
+[100%] Linking CXX executable cyber_monitor
+[100%] Built target cyber_monitor
+
+##############################################################
+
+[32m[1m[ok][0m Build Success
+
+

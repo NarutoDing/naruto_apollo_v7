@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(modules_prediction_scenario_scenario_features)
+message("${Green} [info] modules_prediction_scenario_scenario_features cmakelist ${ColourReset}")
+
+add_library(modules_prediction_scenario_scenario_features_scenario_features  SHARED
+  scenario_features.cc
+)
+set_target_properties(modules_prediction_scenario_scenario_features_scenario_features  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_prediction_scenario_scenario_features_scenario_features
+  modules::prediction::proto::scenario_cc_proto
+)
+add_library(modules::prediction::scenario::scenario_features::scenario_features  ALIAS   modules_prediction_scenario_scenario_features_scenario_features)
+
+add_library(modules_prediction_scenario_scenario_features_cruise_scenario_features  SHARED
+  cruise_scenario_features.cc
+)
+set_target_properties(modules_prediction_scenario_scenario_features_cruise_scenario_features  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_prediction_scenario_scenario_features_cruise_scenario_features
+  modules::prediction::scenario::scenario_features::scenario_features
+  modules::prediction::common::environment_features
+  modules::prediction::common::prediction_map
+)
+add_library(modules::prediction::scenario::scenario_features::cruise_scenario_features  ALIAS   modules_prediction_scenario_scenario_features_cruise_scenario_features)
+
+add_library(modules_prediction_scenario_scenario_features_junction_scenario_features  SHARED
+  junction_scenario_features.cc
+)
+set_target_properties(modules_prediction_scenario_scenario_features_junction_scenario_features  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_prediction_scenario_scenario_features_junction_scenario_features
+  modules::prediction::scenario::scenario_features::scenario_features
+  modules::prediction::common::environment_features
+)
+add_library(modules::prediction::scenario::scenario_features::junction_scenario_features  ALIAS   modules_prediction_scenario_scenario_features_junction_scenario_features)
+

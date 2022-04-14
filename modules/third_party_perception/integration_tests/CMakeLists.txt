@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(modules_third_party_perception_integration_tests)
+message("${Green} [info] modules_third_party_perception_integration_tests cmakelist ${ColourReset}")
+
+add_library(modules_third_party_perception_integration_tests_third_party_perception_test_base  SHARED
+  third_party_perception_test_base.cc
+)
+set_target_properties(modules_third_party_perception_integration_tests_third_party_perception_test_base  PROPERTIES LINKER_LANGUAGE CXX)
+target_link_libraries(modules_third_party_perception_integration_tests_third_party_perception_test_base
+  modules::third_party_perception::third_party_perception_lib
+  
+)
+add_library(modules::third_party_perception::integration_tests::third_party_perception_test_base  ALIAS   modules_third_party_perception_integration_tests_third_party_perception_test_base)
+

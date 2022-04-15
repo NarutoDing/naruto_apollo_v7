@@ -16,37 +16,37 @@ If you find any bugs, please submit your issue.
 
 # Introduction to project catalogue 
 
-**----naruto_apollo_v7**    root path
+**--naruto_apollo_v7**    root path
 
-​    **----bin**    Installation location of all library files and header files, including third-party libraries
+​      **--bin**    Installation location of all library files and header files, including third-party libraries
 
-​        ----cyber
+​          --cyber
 
-​        ----library
+​          --library
 
-​        ----modules
+​          --modules
 
-​    **----build**   Apollo compilation information 
+​      **--build**   Apollo compilation information 
 
-​    **----cmake**  Apollo compilation tools and thirdparty cmake include
+​      **--cmake**  Apollo compilation tools and thirdparty cmake include
 
-​    **----CMakeLists.txt**  root cmakelist
+​      **--CMakeLists.txt**  root cmakelist
 
-​    **----cyber**   apollo cyber
+​      **--cyber**   apollo cyber
 
-​    **----modules**  apollo modules
+​      **--modules**  apollo modules
 
-​    **----readme.md**  follow this to run apollo
+​      **--readme.md**  follow this to run apollo
 
-​    **----tools**   apollo build env
+​      **--tools**   apollo build env
 
-​        ----ApolloBuildEnv
+​          --ApolloBuildEnv
 
-​        ----Cmake-3.20.5
+​          --Cmake-3.20.5
 
-​        ----Python-3.9.5
+​          --Python-3.9.5
 
-​        ----thirdparty  
+​          --thirdparty  
 
 ​     
 
@@ -57,30 +57,19 @@ If you find any bugs, please submit your issue.
 - source  ./ApolloEnvHostLinux.sh
 - python3.9 create_apollo_cmakelist.py
 - python3.9 create_proto_cmakelist.py
+- source ./ApolloPatch.sh
 - cd  ../../
 - python3.9 cmake/apollo_build_script.py  -p host-linux >  /home/naruto/naruto_apollo_v7/trace.log 2>&1
 
- If you don't want to recompile ,please run the follow command:
+ **If you don't want to recompile ,please run the follow command:**
 
 - python3.9 cmake/apollo_build_script.py  -m -p host-linux >  /home/naruto/naruto_apollo_v7/trace.log 2>&1
 
-## For cyber 
 
-**add**  -latomic  **in** cyber/croutine/CMakeLists.txt**------>**target_link_libraries(cyber_croutine_croutine)
-
-**add** -lrt  **in** cyber/CMakeLists.txt**------>**target_link_libraries(cyber_cyber_core) **and** cyber/transport/shm/CMakeLists.txt**------>**target_link_libraries(cyber_transport_shm_posix_segment)
-
-**add** -ldl **in** cyber/class_loader/shared_library/CMakeLists.txt**------>**target_link_libraries(cyber_class_loader_shared_library_shared_library)
-
-**add** detail/swap_x86_64.S **in** cyber/croutine/CMakeLists.txt**------>**add_library(cyber_croutine_swap  SHARED)
 
 ## **For cyber bug**
 
-**add** cyber::service_discovery::role  **in** cyber/service_discovery/CMakeLists.txt**------>**target_link_libraries(cyber_service_discovery_warehouse_base)
-
-set_target_properties(testFunc_shared PROPERTIES OUTPUT_NAME "testFunc")
-
-
+Currently i use the ApolloPatch.sh file to solve some bug, it will be solved later in the create_apollo_cmakelist.py script
 
 ## For modules bug
 

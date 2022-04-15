@@ -566,7 +566,6 @@ if (${ModulesCompile})
   add_subdirectory(modules/common/vehicle_model/proto)
   add_subdirectory(modules/guardian/proto)
   add_subdirectory(modules/monitor/proto)
-
   #add_subdirectory(modules/monitor/software)
   #add_subdirectory(modules/monitor/hardware)
   #add_subdirectory(modules/monitor/common)

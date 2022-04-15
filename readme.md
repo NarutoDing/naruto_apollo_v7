@@ -18,35 +18,35 @@ If you find any bugs, please submit your issue.
 
 **--naruto_apollo_v7**    root path
 
-​      **--bin**    Installation location of all library files and header files, including third-party libraries
+​			**--bin**    Installation location of all library files and header files, including third-party libraries
 
-​          --cyber
+​            				--cyber
 
-​          --library
+​            				--library
 
-​          --modules
+​           				 --modules
 
-​      **--build**   Apollo compilation information 
+​			**--build**   Apollo compilation information 
 
-​      **--cmake**  Apollo compilation tools and thirdparty cmake include
+​			**--cmake**  Apollo compilation tools and thirdparty cmake include
 
-​      **--CMakeLists.txt**  root cmakelist
+​			 **--CMakeLists.txt**  root cmakelist
 
-​      **--cyber**   apollo cyber
+​			 **--cyber**   apollo cyber
 
-​      **--modules**  apollo modules
+​			**--modules**  apollo modules
 
-​      **--readme.md**  follow this to run apollo
+​			**--readme.md**  follow this to run apollo
 
-​      **--tools**   apollo build env
+​			**--tools**   apollo build env
 
-​          --ApolloBuildEnv
+​            				--ApolloBuildEnv
 
-​          --Cmake-3.20.5
+​          				 --Cmake-3.20.5
 
-​          --Python-3.9.5
+​           				--Python-3.9.5
 
-​          --thirdparty  
+​           				--thirdparty  
 
 ​     
 

@@ -46,6 +46,7 @@ include($ENV{TOOL_BASE_PATH}/../cmake/fastcdr.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/gflags.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/glog.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/eigen.cmake)
+include($ENV{TOOL_BASE_PATH}/../cmake/abseil.cmake)
 set(Python_INLCUDE_DIRS $ENV{TOOL_BASE_PATH}/Python-3.9.5/include/python3.9)
 include_directories(${Python_INLCUDE_DIRS})
 
@@ -53,6 +54,7 @@ include_directories(${Python_INLCUDE_DIRS})
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 find_package(CUDA REQUIRED)
+
 
 
 set(CyberCompile 1)

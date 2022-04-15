@@ -206,7 +206,7 @@ class BuildUtils:
                            default='camera',
                            choices=['camera', 'video'],
                            metavar='',
-                           help='Input for LODZ and SE graphs',
+                           help='Input for something',
                            required=False)
 
         parser.add_argument('-z', '--zip',

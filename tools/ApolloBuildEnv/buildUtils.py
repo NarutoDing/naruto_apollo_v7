@@ -35,10 +35,6 @@ except Exception as err:
     print("\nError: Couldn't import few required libraries in buildHelper.py", err, "\nPlease use python3 from Main/Tool/python3.x.y QC8 project\n")
     sys.exit(1)
 
-
-
-
-
 class BuildUtils:
     
     def __init__(self):
@@ -67,7 +63,6 @@ class BuildUtils:
         self.m_REPO_STATUS = False
         self.m_GRAPH_INPUT_TYPE = ""
         self.m_FORCE_ZIP = False
-        # Test Variables
         self.m_TEST_SCOPE = ""
         self.m_TEST_CLEAN = False
         self.m_GTEST_ROOT_PATH = ""
@@ -78,15 +73,11 @@ class BuildUtils:
         self.m_TEST_TARGETS_VALID = list()
         self.m_TEST_TARGETS_INPUT = list()
         self.m_TEST_TARGET_DEPENDENCIES_DICT = dict()
-        #python version
         self.m_pythonVersion = sys.version_info
-        self.m_PROJECT = ""
-        
-        
+        self.m_PROJECT = "" 
     def __del__(self):
         pass
-        
-        
+            
     """
       Function to prinb build description
     """
@@ -100,7 +91,6 @@ class BuildUtils:
             print("\t>> Build Type:", self.m_BUILD_TYPE.upper(), "\n")
             print("\t>> Build Path:", self.m_BUILD_DIR_PATH, "\n")
             print("\t>> OpenVX Lib Path:", self.m_OPENVX_LIB_PATH, "reserved\n")
-            #print("\t>> SmartEye Lib Path:", self.m_SMARTEYE_LIB_PATH, "\n")
         if type == "TEST":
             print("Current Test Build Description:")
             print("\n\t>> Detected Host OS :", self.m_HOST_OS.upper(), "\n")
@@ -122,56 +112,33 @@ class BuildUtils:
             print("\nError: Path Not Found -", path, "\n")
             return 1
         return 0
-    
-    
-    
-     
-    
-    
     """
       Function to update Main working directory and other requireds paths
     """
     def prepareWorkSpace(self, type="BUILD", scope="PROJECT"):
-        #configure workspace
         self.m_CWD = os.getcwd()
-        #setting the current working directory to script directory
-        namespace = sys._getframe(1).f_globals  # caller's globals
-        #get path of script calling this function
+        namespace = sys._getframe(1).f_globals 
         scriptPath = namespace['__file__']
         scriptDir = os.path.dirname(scriptPath)
         self.m_SCRIPT_DIR_PATH = os.path.abspath(scriptDir)
-        
         self.m_PYTHON_PATH = os.path.abspath(os.environ["PYTHON_BIN_PATH"])
         self.m_CMAKE_BIN_PATH = os.path.abspath(os.environ["CMAKE_BIN_PATH"])
         self.m_OpenCV_PATH = os.path.abspath(os.environ["OpenCV_DIR"])
         
         if type == "BUILD":
-            #/naruto_apollo_v7/cmake
             os.chdir(self.m_SCRIPT_DIR_PATH)
-            #determine Main directory based on script location
-            #/naruto_apollo_v7
             self.m_MAIN_DIR_PATH = os.path.abspath(os.path.join(self.m_SCRIPT_DIR_PATH,".."))
-            #print("nihao" , self.m_MAIN_DIR_PATH)
         elif type == "TEST":
             self.m_TEST_SCOPE = scope
             utilityScriptPath = os.path.realpath(__file__)
             utilityScriptDir = os.path.dirname(utilityScriptPath)
             os.chdir(utilityScriptDir)
-            
-            #determine Main directory based on utility script location
-            self.m_MAIN_DIR_PATH = os.path.abspath(os.path.join(*["..","..","HIS","Main"]))
+            self.m_MAIN_DIR_PATH = os.path.abspath(os.path.join(*["add here"]))
             if self.checkPath(self.m_MAIN_DIR_PATH):
                 raise Exception("Please update build utlity script, to get proper Main directory path")
                 self.m_GTEST_ROOT_PATH = os.path.abspath(os.environ['GTEST_ROOT'])
             os.chdir(self.m_SCRIPT_DIR_PATH)
-            
-        #self.cleanWorkSpace()
         return 0
-
-    
-    
-    
-    
     """
       Function to create directory else if directory already exsits clears the directory
     """
@@ -196,12 +163,7 @@ class BuildUtils:
         except Exception as err:
             print(err)
             raise Exception('\nWhile creating folder - ' + os.path.join(path, directory))
-            
-            
-    
-    
-    
-    
+
     """
       Function to parse json keys
     """
@@ -213,29 +175,22 @@ class BuildUtils:
       jsonData = json.load(fh)
       return 0
     
-    
-    
-    
     """
       Function to parse inputs
     """
     def parseAndValidateInputs(self):      
-        #jsonParserCall
         self.parseBuildInputJson(self.m_SCRIPT_DIR_PATH)
         self.m_HOST_OS = platform.lower()
         if(self.m_HOST_OS == "win32"):
             self.m_HOST_OS = "windows"
     
-        #argparser
-        parser = argparse.ArgumentParser(description='Build System for HIS Freemont DMS Project')
-        
-        # Add the arguments
+        parser = argparse.ArgumentParser(description='Build System for Apollo Project')
         parser.add_argument('-p', '--platform_os',
                            type=str.lower,
                            default='host-linux',
-                           choices=['host-linux', 'host-windows', 'qc8-qnx', 'ea9-rtlinux', 'nvidia-linux', 'nvidiahost-linux'],
+                           choices=['host-linux', 'host-windows',  'nvidiahost-linux'],
                            metavar='',
-                           help='Build Platform. Ex: host-linux(default), qc8-qnx, ea9-rtlinux, nvidia-linux, nvidiahost-linux',
+                           help='Build Platform. Ex: host-linux(default), nvidia-linux, nvidiahost-linux',
                            required=False)
                            
         parser.add_argument('-b', '--build_type',
@@ -308,23 +263,12 @@ class BuildUtils:
 
         os.environ['TARGET'] = self.m_BUILD_NAME.upper()
         
-        if self.m_BUILD_TARGET_NAME == "qc8":
-            self.m_SDP_PATH = os.environ['SDP_PATH']
-            if(self.checkPath(self.m_SDP_PATH)):
-                raise Exception('Invalid SDP_PATH.')
-            if (self.checkPath(os.path.join(self.m_SDP_PATH, "qnxsdp-env.sh"))):
-                raise Exception('Invalid SDP_PATH. \"qnxsdp-env.sh\" is mising in SDP_PATH')
-        elif self.m_BUILD_TARGET_NAME == "ea9":
-            self.m_SDP_PATH = os.environ['SWPF_SYSROOT']
-            if(self.checkPath(self.m_SDP_PATH)):
-                raise Exception('Invalid SWPF_SYSROOT.')
-            if (self.checkPath(os.path.join(self.m_SDP_PATH, "environment-setup-aarch64-poky-linux"))):
-                raise Exception('Invalid SWPF_SYSROOT')
-        elif self.m_BUILD_TARGET_NAME == "nvidiahost":
+
+        if self.m_BUILD_TARGET_NAME == "nvidiahost":
             print(self.m_BUILD_OS_NAME)
 
         
-        if self.m_BUILD_OS_NAME != "linux" and self.m_BUILD_OS_NAME != "qnx" and self.m_BUILD_OS_NAME != "windows" and self.m_BUILD_OS_NAME != "nvidia" and self.m_BUILD_OS_NAME != "rtlinux":
+        if self.m_BUILD_OS_NAME != "linux"  and self.m_BUILD_OS_NAME != "windows" and self.m_BUILD_OS_NAME != "nvidia" and self.m_BUILD_OS_NAME != "rtlinux":
             print("\nError: Invalid Arguments. Allowed os are only qnx for qc8 and linux, windows for host.\n")
             raise Exception('Invalid Arguments.')
         
@@ -341,20 +285,15 @@ class BuildUtils:
             
         if self.m_BUILD_TARGET_NAME == "nvidia":
             self.m_BUILD_OS_NAME = "Linux4Tegra"
-            # No Cross Build
             self.m_PYTHON_PATH = ""
             self.m_CMAKE_BIN_PATH = ""
         return 0
-        
-        
-          
-            
+                
     """
       Function to execute linux command using subprocess library and get realtime outputs
     """
     def executeCommand(self, command, processWorkingDir):
         loger.log_info(command + processWorkingDir)
-        #print(command, processWorkingDir)
         process = subprocess.Popen(command, cwd=processWorkingDir, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True, executable="/bin/bash")
         print("\n##############################################################\n")
         while True:
@@ -366,48 +305,22 @@ class BuildUtils:
         print("\n##############################################################\n")
         returncode = process.poll()
         return returncode
-    
-
-    """
-	Function to get LODZ and SE grapsh input type
-    """    
+       
     def getGraphInput(self):
-        sizeOfArgv = len(sys.argv)
-        for i_Argv in range(1, sizeOfArgv):
-            isInputSetFromArg = False
-            if(((sys.argv[i_Argv] == "-i") or (sys.argv[i_Argv] == "--input_type")) and ((i_Argv+1) <= sizeOfArgv) and (((sys.argv[i_Argv+1]).lower() == "camera") or ((sys.argv[i_Argv+1]).lower() == "video"))):
-                isInputSetFromArg = True
-                break
-        if isInputSetFromArg == False:
-            cmakeGraphParam = " -DENABLE_LODZ_GRAPH_CAMERA_INP_DEFINE=OFF -DENABLE_SE_GRAPH_CAMERA_INP_DEFINE=OFF -DENABLE_INI_SETTINGS_DEFINE=ON"
-        elif self.m_GRAPH_INPUT_TYPE == "camera":
-            cmakeGraphParam = " -DENABLE_LODZ_GRAPH_CAMERA_INP_DEFINE=ON -DENABLE_SE_GRAPH_CAMERA_INP_DEFINE=ON -DENABLE_INI_SETTINGS_DEFINE=OFF"
-        elif self.m_GRAPH_INPUT_TYPE == "video":
-            cmakeGraphParam = " -DENABLE_LODZ_GRAPH_CAMERA_INP_DEFINE=OFF -DENABLE_SE_GRAPH_CAMERA_INP_DEFINE=OFF -DENABLE_INI_SETTINGS_DEFINE=OFF"
-        else:
-            cmakeGraphParam = ""
-        return cmakeGraphParam
+        return ""
         
     
     """
       Function to execute cmake and make
     """
-    #dingjiangang 0
     def buildFor(self, cmakeCommand, makeCommand, buildPath):
         if not self.m_ONLY_MAKE:
             print("\n\nExecuting CMake...........\n")
             if(self.executeCommand(cmakeCommand, buildPath)):
                 raise Exception('CMake Error in - ' + buildPath)
    
-        try:
-            with open(buildPath + '/Rtu-DMSAlgoSE/se_trackercore.txt', 'r') as file:
-                self.m_SMARTEYE_LIB_PATH = file.read().rstrip()
-        except:
-            pass
-
         print("\n\nExecuting Make...........\n")
         if(self.executeCommand(makeCommand, buildPath)):
-            print("dingjiangang",buildPath)
             raise Exception('Make Error in - ' + buildPath)
         return 0
 
@@ -419,66 +332,20 @@ class BuildUtils:
     """
     def buildHostLinux(self):
         print("######################### Inside Host Build #########################")
-        #self.printBuildDetails()
         print("\n\n\nStarting Build\nBuilding.................\n")
-        #self.m_OPENVX_LIB_PATH = os.path.join(*[self.m_OPENVX_BASE, self.m_BUILD_OS_NAME.capitalize(), "x64", self.m_BUILD_TYPE.capitalize()])
-        #self.m_SMARTEYE_LIB_PATH = os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Libraries","Third-Party","smart-eye-lib-x86-linux", "Ubuntu18.04", "trackercore_x86"])
         cmakeCmd = self.m_CMAKE_BIN_PATH  + " -DCMAKE_BUILD_TYPE=" + self.m_BUILD_TYPE.capitalize()  + " " + self.m_CMAKELIST_PATH
         makeCmd = "make -j4 "
         self.printBuildDetails()
         self.buildFor(cmakeCmd, makeCmd, self.m_BUILD_DIR_PATH)
         loger.log_ok("Build Success")
-        #print("\n\n######### Build Success ##########\n")
         return 0
-        
-        
-        
-        
-        
-    """
-      Function to build for qc8-qnx
-    """
-    def buildQc8Qnx(self):
-        print("################## Inside QNX Build ##################")
-        #self.printBuildDetails()
-        print("\n\n\nStarting Build\nBuilding.................\n")
-        #self.m_OPENVX_LIB_PATH = os.path.join(*[self.m_OPENVX_BASE, self.m_BUILD_OS_NAME.upper(), "x64", self.m_BUILD_TYPE.capitalize()])
-        self.m_SMARTEYE_LIB_PATH = os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Libraries","Third-Party","smart-eye-lib-aarch64-qnx", "trackercore_qnx7_aarch64"])
-        cmakeCmd = "source " + os.path.join(self.m_SDP_PATH, "qnxsdp-env.sh") + " && " + self.m_CMAKE_BIN_PATH + " -DOPENVX_PATH="+ self.m_OPENVX_LIB_PATH + " -DCMAKE_BUILD_TYPE=" + self.m_BUILD_TYPE.capitalize() + " -DCMAKE_TOOLCHAIN_FILE=" + self.m_TOOLCHAIN_PATH + " -DQNX=yes" + " " + self.m_CMAKELIST_PATH
-        makeCmd = "source " + os.path.join(self.m_SDP_PATH, "qnxsdp-env.sh") + " && " + "make -j4"
-        self.printBuildDetails()
-        self.buildFor(cmakeCmd, makeCmd, self.m_BUILD_DIR_PATH)
-        print("\n\n######### Build Success ##########\n")
-        return 0
-      
-      
-
-    """
-      Function to build for ea9-rtlinux
-    """
-    def buildEa9Rtlinux(self):
-        print("################## Inside RTLinux Build ##################")
-        #self.printBuildDetails()
-        print("\n\n\nStarting Build\nBuilding.................\n")
-        #self.m_OPENVX_LIB_PATH = os.path.join(*[self.m_OPENVX_BASE, self.m_BUILD_OS_NAME.upper(), "x64", self.m_BUILD_TYPE.capitalize()])
-        self.m_SMARTEYE_LIB_PATH = os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Libraries","Third-Party","smart-eye-lib-aarch64-rtlinux", "trackercore_sarp"])
-        cmakeCmd = "source " + os.path.join(self.m_SDP_PATH, "environment-setup-aarch64-poky-linux") + " && " + self.m_CMAKE_BIN_PATH + " -DOPENVX_PATH="+ self.m_OPENVX_LIB_PATH + " -DCMAKE_BUILD_TYPE=" + self.m_BUILD_TYPE.capitalize() + " -DCMAKE_TOOLCHAIN_FILE=" + self.m_TOOLCHAIN_PATH + " " + self.m_CMAKELIST_PATH
-        makeCmd = "source " + os.path.join(self.m_SDP_PATH, "environment-setup-aarch64-poky-linux") + " && " + "make"
-        self.printBuildDetails()
-        self.buildFor(cmakeCmd, makeCmd, self.m_BUILD_DIR_PATH)
-        print("\n\n######### Build Success ##########\n")
-        return 0
-
-
-
+           
     """
       Function to build for Nvidia
     """
     def buildNvidiaLinux(self):
         print("################## Inside Nvidia Linux Build ##################")
-        #self.printBuildDetails()
         print("\n\n\nStarting Build\nBuilding.................\n")
-        #self.m_OPENVX_LIB_PATH = os.path.join(*[self.m_OPENVX_BASE, "Linux4Tegra", "x64", self.m_BUILD_TYPE.capitalize()])
         print(self.m_CMAKE_BIN_PATH)
         print(os.path.exists(self.m_OPENVX_LIB_PATH))
         self.m_SMARTEYE_LIB_PATH = os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Libraries","Third-Party","smart-eye-lib-nvidia-linux", "trackercore_armv8"])
@@ -498,10 +365,8 @@ class BuildUtils:
         self.printBuildDetails()
         print("\n\n\nStarting Build\nBuilding.................\n")
         print(self.m_TOOLCHAIN_PATH)
-        #self.m_OPENVX_LIB_PATH = os.path.join(*[self.m_OPENVX_BASE, "Linux4Tegra", "x64", self.m_BUILD_TYPE.capitalize()])
         print(self.m_CMAKE_BIN_PATH)
         print(self.m_BUILD_TYPE.capitalize(),"\n")
-        #print(self.m_OPENVX_BASE,"\n")
         print((self.m_OPENVX_LIB_PATH),"\n")
         print(os.path.exists(self.m_OPENVX_LIB_PATH),"\n")
         self.m_SMARTEYE_LIB_PATH = os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Libraries", "Third-Party", "smart-eye-lib-nvidia-linux", "trackercore_armv8"])
@@ -521,7 +386,7 @@ class BuildUtils:
         return 0
     
     """
-      Function to build the freemont dms project
+      Function to build the apollo project
     """
     def buildProject(self, CMAKELIST_PATH, BUILD_DIR_PATH, TOOLCHAIN_PATH=None):
         BUILD_DIR_PATH = os.path.abspath(self.createAndClearDirectory(os.path.join(*[BUILD_DIR_PATH,self.m_BUILD_NAME])))
@@ -529,60 +394,25 @@ class BuildUtils:
         self.m_BUILD_DIR_PATH = BUILD_DIR_PATH
         self.m_TOOLCHAIN_PATH = TOOLCHAIN_PATH
         self.m_CMAKELIST_PATH = CMAKELIST_PATH
-        #linux os
         if self.m_HOST_OS == "linux":
-            #host  
             if self.m_BUILD_NAME == "host-linux":
-                self.buildHostLinux()
-            
-            #qc8     
-            elif self.m_BUILD_NAME == "qc8-qnx":
-                self.buildQc8Qnx()
-            
-            #ea9
-            elif self.m_BUILD_NAME == "ea9-rtlinux":
-                self.buildEa9Rtlinux()
-              
-            #nvidia  
+                self.buildHostLinux()  
             elif self.m_BUILD_NAME == "nvidia-linux":
                 self.buildNvidiaLinux()    
-            
-            #nvidia  
             elif self.m_BUILD_NAME == "nvidiahost-linux":
-                self.buildNvidiaHostLinux()
-
-        #windows os      
+                self.buildNvidiaHostLinux()    
         elif self.m_HOST_OS == "windows":
-            #host 
             if self.m_BUILD_NAME == "host-windows":
                 self.buildHostLinux()
-        
-            #qc8
-            elif self.m_BUILD_NAME == "qc8-qnx":
-                self.buildQc8Qnx()
-                
-            #ea9
-            elif self.m_BUILD_NAME == "ea9-rtlinux":
-                self.buildEa9Rtlinux()
-              
-            #nvidia  
             elif self.m_BUILD_NAME == "nvidia-linux":
-                self.buildNvidiaLinux()
-
-            #nvidia  
+                self.buildNvidiaLinux() 
             elif self.m_BUILD_NAME == "nvidiahost-linux":
                 self.buildNvidiaHostLinux()
-
-            #copy necessary files to bin
         self.copyFilesToBinForRun()      
                 
-        #prepare folders for release
         if (self.m_BUILD_TYPE == "release") or (self.m_FORCE_ZIP == True):
-            #copying required files into release folder
-            # datetime object containing current date and time
             now = datetime.now()
             dateNtime = now.strftime("%d_%m_%Y-%H_%M")
-            #creating release/debug folder 
             releaseDirPath = os.path.abspath(os.path.join(*[".", self.m_BUILD_TYPE.capitalize()+"-"+self.m_BUILD_NAME+"-"+dateNtime]))
             print("\nCopying necessary files to Main/src/CPU/Build/" + self.m_BUILD_TYPE.capitalize()+"-"+self.m_BUILD_NAME+"-"+dateNtime +"\nCopying ..........\n")
             self.copyAndZipFilesForRelease(releaseDirPath)
@@ -597,7 +427,6 @@ class BuildUtils:
     def zipTheFolder(self, folderToZip, whereToPlaceZip):
         try:
             zipHandle = zipfile.ZipFile(whereToPlaceZip+'.zip', 'w', zipfile.ZIP_DEFLATED)
-            #changing the working directory to eliminate the zipping of absolute path into directory
             cwd = os.getcwd()
             os.chdir(os.path.join(folderToZip, ".."))
             print("\nZipping the folder", folderToZip, "\n")
@@ -622,48 +451,15 @@ class BuildUtils:
       Function to copy required files for running app from bin
     """
     def copyFilesToBinForRun(self):
-        #bin path
         binPath = os.path.abspath("bin")
         if (self.m_pythonVersion[0] == 3 and self.m_pythonVersion[1] > 8):
-            #create data folder
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "data"])):
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "data"]), os.path.join(binPath, "data"), copy_function=shutil.copy, dirs_exist_ok=True)
-        
-        #create Face detect folder
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application", "FaceDetectSE"])):
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application", "FaceDetectSE"]), os.path.join(binPath, "FaceDetectSE"), copy_function=shutil.copy, dirs_exist_ok=True)
-            
-            #create neural network folder
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Components","Rtu-HxCognitiveDistractionVisuals", "Implementation", "Private", "cogload_nn", "neural_network"])):
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Components","Rtu-HxCognitiveDistractionVisuals", "Implementation", "Private", "cogload_nn", "neural_network"]), os.path.join(binPath, "neural_network"), copy_function=shutil.copy, dirs_exist_ok=True)
-        
             if self.m_BUILD_TARGET_NAME.startswith("nvidia"):
-                #create opencv folder
                 if os.path.exists(os.path.join(*[os.environ['TOOL_BASE_PATH'],"OpenCv-4.5.3","install","linux-nvidia","lib"])):
                     shutil.copytree(os.path.join(*[os.environ['TOOL_BASE_PATH'],"OpenCv-4.5.3","install","linux-nvidia","lib"]), os.path.join(binPath, "OpenCv"), copy_function=shutil.copy, dirs_exist_ok=True)
             elif self.m_BUILD_TARGET_NAME == "host":
-                #create opencv folder
                 if os.path.exists(os.path.join(*[os.environ['TOOL_BASE_PATH'],"OpenCv-4.5.3","install","linux-x86","lib"])):
                     shutil.copytree(os.path.join(*[os.environ['TOOL_BASE_PATH'],"OpenCv-4.5.3","install","linux-x86","lib"]), os.path.join(binPath, "OpenCv"), copy_function=shutil.copy, dirs_exist_ok=True)
-
         else:
-            #create data folder
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "data"])):
-                if os.path.exists(os.path.join(binPath, "data")):
-                    shutil.rmtree(os.path.join(binPath, "data"))
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "data"]), os.path.join(binPath, "data"), copy_function=shutil.copy)
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application", "FaceDetectSE"])):
-                if os.path.exists(os.path.join(binPath, "FaceDetectSE")):
-                    shutil.rmtree(os.path.join(binPath, "FaceDetectSE"))
-                #create Face detect folder
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application", "FaceDetectSE"]), os.path.join(binPath, "FaceDetectSE"), copy_function=shutil.copy)
-                #create neural network folder
-            if os.path.exists(os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Components","Rtu-HxCognitiveDistractionVisuals", "Implementation", "Private", "cogload_nn", "neural_network"])):
-                if os.path.exists(os.path.join(binPath, "neural_network")):
-                    shutil.rmtree(os.path.join(binPath, "neural_network"))
-                
-                shutil.copytree(os.path.join(*[self.m_MAIN_DIR_PATH,"Platform","CPU", "Components","Rtu-HxCognitiveDistractionVisuals", "Implementation", "Private", "cogload_nn", "neural_network"]), os.path.join(binPath, "neural_network"), copy_function=shutil.copy)
-
             if self.m_BUILD_TARGET_NAME.startswith("nvidia"):
                 #create opencv folder      
                 if os.path.exists(os.path.join(*[os.environ['TOOL_BASE_PATH'],"OpenCv-4.5.3","install","linux-nvidia","lib"])):
@@ -680,48 +476,6 @@ class BuildUtils:
         if self.m_PROJECT == "build":
             print("")
 
-            
-        #json data files
-        #shutil.copyfile(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application","DMS_camera_SE_front.json"]), os.path.join(binPath, "DMS_camera_SE_front.json"))
-        #shutil.copyfile(os.path.join(*[self.m_MAIN_DIR_PATH,"src","Common", "Config","Application","DMS_camera_SE.json"]), os.path.join(binPath, "DMS_camera_SE.json"))
-        
-        #copy required .so files to release folder
-        if self.m_BUILD_TARGET_NAME == "qc8":
-            #someip so
-            shutil.copyfile(os.path.join(*[self.m_BUILD_DIR_PATH,"IPC_AtlasIntegration","Components","SomeIpServer","Implementation","Private","gen","libHostDmsService-multi.so"]), os.path.join(binPath, "libHostDmsService-multi.so"))
-            #opencv so's
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"target","qnx7","x86_64","usr","lib","libopencv_core.so.3.2.0"]), os.path.join(binPath, "libopencv_core.so.3.2.0"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"target","qnx7","x86_64","usr","lib","libopencv_highgui.so.3.2.0"]), os.path.join(binPath, "libopencv_core.so.3.2.0"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"target","qnx7","x86_64","usr","lib","libopencv_imgproc.so.3.2.0"]), os.path.join(binPath, "libopencv_core.so.3.2.0"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"target","qnx7","x86_64","usr","lib","libopencv_videoio.so.3.2.0"]), os.path.join(binPath, "libopencv_core.so.3.2.0"))
-        if self.m_BUILD_TARGET_NAME == "ea9":
-            #someip so
-            shutil.copyfile(os.path.join(*[self.m_BUILD_DIR_PATH,"IPC_AtlasIntegration","Components","SomeIpServer","Implementation","Private","gen","libHostDmsService-multi.so"]), os.path.join(releasePath, "libHostDmsService-multi.so"))
-            #opencv so's
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"sysroots","aarch64-poky-linux","usr","lib","libopencv_core.so.3.4.2"]), os.path.join(binPath, "libopencv_core.so.3.4.2"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"sysroots","aarch64-poky-linux","usr","lib","libopencv_highgui.so.3.4.2"]), os.path.join(binPath, "libopencv_highgui.so.3.4.2"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"sysroots","aarch64-poky-linux","usr","lib","libopencv_imgproc.so.3.4.2"]), os.path.join(binPath, "libopencv_imgproc.so.3.4.2"))
-            shutil.copyfile(os.path.join(*[self.m_SDP_PATH,"sysroots","aarch64-poky-linux","usr","lib","libopencv_videoio.so.3.4.2"]), os.path.join(binPath, "libopencv_videoio.so.3.4.2"))
-        if self.m_BUILD_TARGET_NAME == "ea9":
-            #smartEye so's
-            shutil.copyfile(os.path.join(*[self.m_SMARTEYE_LIB_PATH, "lib", "libsetracking.a"]), os.path.join(binPath, "libsetracking.a"))
-        else:
-            print("")
-            #smartEye so's
-            #shutil.copyfile(os.path.join(*[self.m_SMARTEYE_LIB_PATH, "lib", "libsetracking.so"]), os.path.join(binPath, "libsetracking.so"))
-            #shutil.copyfile(os.path.join(*[self.m_SMARTEYE_LIB_PATH, "lib", "libsedmf_driverid.so"]), os.path.join(binPath, "libsedmf_driverid.so"))
-            try:
-                shutil.copyfile(os.path.join(*[self.m_SMARTEYE_LIB_PATH, "lib", "libcompresslib.so"]), os.path.join(binPath, "libcompresslib.so"))
-            except:
-                pass
-        #openvx so's      
-        #shutil.copyfile(os.path.join(*[self.m_OPENVX_LIB_PATH,"bin","libopenvx-c_model.so"]), os.path.join(binPath, "libopenvx-c_model.so"))
-        #shutil.copyfile(os.path.join(*[self.m_OPENVX_LIB_PATH,"bin","libopenvx-extras.so"]), os.path.join(binPath, "libopenvx-extras.so"))
-        #shutil.copyfile(os.path.join(*[self.m_OPENVX_LIB_PATH,"bin","libopenvx-debug.so"]), os.path.join(binPath, "libopenvx-debug.so"))
-        #shutil.copyfile(os.path.join(*[self.m_OPENVX_LIB_PATH,"bin","libopenvx.so"]), os.path.join(binPath, "libopenvx.so"))
-        #shutil.copyfile(os.path.join(*[self.m_OPENVX_LIB_PATH,"bin","libvxu.so"]), os.path.join(binPath, "libvxu.so"))
-        
-        
         releaseNotesFile = ""
         for path, dirs, files in os.walk(os.path.join(self.m_MAIN_DIR_PATH,"Doc")):
             for file in files:
@@ -731,17 +485,11 @@ class BuildUtils:
             shutil.copyfile(os.path.join(*[self.m_MAIN_DIR_PATH,"Doc",releaseNotesFile]), os.path.join(binPath, releaseNotesFile))
         else:
             print("") 
-            #print("\n\nError:RealeaseNotes is missing in Main/Doc folder.\n\n")
-        #shutil.copyfile(os.path.join(*[self.m_MAIN_DIR_PATH,"Doc","READ_ME.txt"]), os.path.join(binPath, "READ_ME.txt"))
-    
-
-
 
     """
       Function to copy required files for release
     """
     def copyAndZipFilesForRelease(self, RELEASE_DIR_PATH):
-        #release folder creation
         releasePath = os.path.abspath(RELEASE_DIR_PATH)
         
         if (os.path.exists('bin')):
@@ -812,7 +560,7 @@ class BuildUtils:
       Function for git lfs pull of a repo
     """
     def gitLfsPull(self, repoPath):
-        print("\n\nChecking out dms-qc8-mainline branch for ", os.path.basename(os.path.normpath(repoPath)), "\n")
+        print("\n\nChecking out mainline branch for ", os.path.basename(os.path.normpath(repoPath)), "\n")
         print("\nExecuting git lfs pull on ->\t", repoPath, "\n")
         if (self.executeCommand("git lfs pull", repoPath)):
                 raise Exception('Git Lfs Pull Error - ' + os.path.basename(os.path.normpath(repoPath)))
@@ -932,71 +680,14 @@ class BuildUtils:
             return 0
         except Exception as err:
             print(err)
-            raise Exception('\nWhile parsing test input json- ' + inputJsonPath)
-
-
-
-
-    """
-        Function to parse test inputs
-    """
-    def parseAndValidateTestInputs(self):   
-        #jsonParserCall
-        if self.m_TEST_SCOPE == "PROJECT":
-            self.parseTestConfigJson(self.m_SCRIPT_DIR_PATH)
-        elif self.m_TEST_SCOPE == "COMPONENT":
-            pass
-            
-        #argparser
-        parser = argparse.ArgumentParser(description='Build System for HIS Freemont DMS Project')
-        
-        # Add the arguments
-        parser.add_argument('-t', '--test_target',
-                           type=str.lower,
-                           default = None,
-                           metavar="",
-                           help='Component Name Under Test. Multiple targets with comma sepearted',
-                           required=False)
-                           
-        parser.add_argument('--clean_all',
-                           help='Clear build directory and test reports present in component scope',
-                           action='store_true')
-        
-        parser.add_argument('-v', '--version', 
-                            action='version',
-                            version='%(prog)s 1.0', help="Show program's version number and exit.")
-                        
-                           
-        # Parse the argument
-        args = parser.parse_args()
-        
-        TEST_TARGET = args.test_target
-        
-        self.m_TEST_CLEAN = args.clean_all
-        
-        if TEST_TARGET is not None:
-            TEST_TARGETS_INPUT = TEST_TARGET.split(",")
-            for testTragetName in self.m_TEST_TARGETS_INPUT:
-                if not testTragetName in self.m_TEST_TARGETS_VALID:
-                    print("\nError: Test Target", testTragetName, "is not valid, so skipping it. Please update test targets in inputTestConfig.json and try.\n")
-                else:
-                    self.m_TEST_TARGETS_INPUT.append(testTragetName)
-        else:
-            self.m_TEST_TARGETS_INPUT = self.m_TEST_TARGETS_VALID
-        
-        return 0
-        
-        
-      
+            raise Exception('\nWhile parsing test input json- ' + inputJsonPath) 
       
     """
       Function to build and testing, gtest and lcov (code coverage) commands are embedded in test component cmake file 
     """
     def buildAndTest(self):
         print("################## Inside Host Build and Test ##################")
-        #self.printBuildDetails()
-        print("\n\n\nStarting Build and Test .................\n")
-        #cmake related commands    
+        print("\n\n\nStarting Build and Test .................\n")   
         cmakeCmd = self.m_CMAKE_BIN_PATH + " .."
         makeCmd = "make -j4"
         self.printBuildDetails(type="TEST")
@@ -1004,14 +695,10 @@ class BuildUtils:
         print("\n\n######### Build and Test Success ##########\n")
         return 0
         
-        
-        
-    
     """
       Function to copy test reports
     """
     def copyTestReoprtsForReview(self):
-        #creating reports folder and copy reports to workspace
         print("copyTestReoprtsForReview==========================================")
         resultReportsPath = os.path.abspath(self.createAndClearDirectory(os.path.join(self.m_CWD, "test_reports")))
         reportsPath = os.path.abspath(self.createAndClearDirectory(os.path.join(resultReportsPath, self.m_CURR_TEST_TARGET+"_reports")))

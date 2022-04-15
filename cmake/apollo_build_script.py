@@ -27,34 +27,20 @@ from buildUtils import BuildUtils
 ###############################################################################
 
 if __name__ == "__main__":
-
     try:
-        #create new build utils object
         buildUtility = BuildUtils()
-
-        # set paths to cmake, python tools and main directory
         buildUtility.prepareWorkSpace()
-
-        # parse the input json file and input arguments for building the project
         buildUtility.parseAndValidateInputs()
-
-        # clean
         if buildUtility.m_BUILD_CLEAN:
             buildUtility.buildClean()
-
-        # repo sync
         if buildUtility.m_SYNC:
             buildUtility.repoSync()
-
-        # repo reset
         if buildUtility.m_REPO_RESET:
             buildUtility.repoReset()
-
-        # repo status
         if buildUtility.m_REPO_STATUS:
             buildUtility.repoStatus()
 
-        buildUtility.m_PROJECT = "space2"
+        buildUtility.m_PROJECT = "apollo"
 
         TOOLCHAIN_PATH = ""
         if buildUtility.m_BUILD_TARGET_NAME == "nvidia":
@@ -65,16 +51,10 @@ if __name__ == "__main__":
             
         BUILD_DIR_PATH = os.path.abspath(buildUtility.createAndClearDirectory(os.path.join(*[buildUtility.m_MAIN_DIR_PATH,"build"])))
         os.path.abspath(buildUtility.createAndClearDirectory(os.path.join(*[buildUtility.m_MAIN_DIR_PATH,"build/"])))
-        #print("ddddddddddddddddddddd", os.path.join(*[buildUtility.m_MAIN_DIR_PATH,"build"]))
-        #change current directory to build directory
         os.chdir(BUILD_DIR_PATH)
-        
         CMAKELIST_PATH = os.path.abspath("..")
         print(TOOLCHAIN_PATH)
-        #build project
         buildUtility.buildProject(CMAKELIST_PATH, BUILD_DIR_PATH, TOOLCHAIN_PATH)
-
-
     except Exception as err:
         print("\nScript logged traceback:\n#### Start ####\n")
         print("\nError:", err,"\n\n")

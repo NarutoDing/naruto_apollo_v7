@@ -74,9 +74,22 @@ Currently i use the ApolloPatch.sh file to solve some bug, it will be solved lat
 ## For modules bug
 
 - modules/drivers/lidar/hesai/driver/BUILD  modules/drivers/lidar/robosense/driver/BUILD   **------>** "//modules/drivers/lidar/proto:config_cc_proto",
-
 - modules/drivers/lidar/velodyne/driver/BUILD **------>** "//modules/drivers/lidar/proto:config_cc_proto",
-
 - modules/drivers/lidar/robosense/driver/BUILD  **------>**"//modules/drivers/lidar/proto:robosense_cc_proto",
-
 - modules/drivers/lidar/common/driver_factory/BUILD **------>**"//modules/drivers/lidar/proto:config_cc_proto", **and** "//modules/drivers/lidar/proto:lidar_parameter_cc_proto",
+
+## For QT setting
+
+In QT **Build Environment**, click **Batch Edit** button, add the following message by your own environment
+
+```
+APOLLO_BUILD_ENV_DIR=/home/naruto/naruto_apollo_v7/tools/ApolloBuildEnv
+CMAKE_BIN_PATH="/home/naruto/naruto_apollo_v7/tools/Cmake-3.20.5/bin/cmake"
+CYBER_INSTALL_PATH=/home/naruto/naruto_apollo_v7/bin/cyber
+MODULES_INSTALL_PATH=home/naruto/naruto_apollo_v7/bin/modules
+NARUTO_APOLLO_ROOT=/home/naruto/naruto_apollo_v7
+THIRD_LIBRARY_INSTALL_PATH=/home/naruto/naruto_apollo_v7/bin/library
+THIRD_PARTY_PATH="${TOOL_BASE_PATH}/thirdparty"
+TOOL_BASE_PATH=/home/naruto/naruto_apollo_v7/tools
+```
+

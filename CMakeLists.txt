@@ -234,7 +234,7 @@ if (${ModulesCompile})
   add_subdirectory(modules/v2x/v2x_proxy/os_interface)
   add_subdirectory(modules/v2x/v2x_proxy/obu_interface)
   add_subdirectory(modules/v2x/v2x_proxy/obu_interface/grpc_interface)
-  add_subdirectory(modules/v2x/v2x_proxy/os_interface) #bug
+  add_subdirectory(modules/v2x/v2x_proxy/proto_adapter) #bug
   add_subdirectory(modules/routing/strategy)
   add_subdirectory(modules/routing/core)
   add_subdirectory(modules/routing/proto)

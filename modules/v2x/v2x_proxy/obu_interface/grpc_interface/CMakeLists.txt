@@ -10,8 +10,8 @@ set_target_properties(modules_v2x_v2x_proxy_obu_interface_grpc_interface_grpc_cl
 target_link_libraries(modules_v2x_v2x_proxy_obu_interface_grpc_interface_grpc_client
   cyber::cyber
   modules::v2x::common::v2x_proxy_gflags
-  modules::v2x::proto::v2x_service_car_to_obu_cc_grpc
-  modules::v2x::proto::v2x_service_obu_to_car_cc_grpc
+  modules::v2x::proto::v2x_service_car_to_obu_cc_proto
+  modules::v2x::proto::v2x_service_obu_to_car_cc_proto
   ${grpc}
 )
 add_library(modules::v2x::v2x_proxy::obu_interface::grpc_interface::grpc_client  ALIAS   modules_v2x_v2x_proxy_obu_interface_grpc_interface_grpc_client)
@@ -26,8 +26,8 @@ target_link_libraries(modules_v2x_v2x_proxy_obu_interface_grpc_interface_grpc_se
   modules::perception::proto::traffic_light_detection_cc_proto
   modules::v2x::common::v2x_proxy_gflags
   modules::v2x::proto::v2x_obu_rsi_cc_proto
-  modules::v2x::proto::v2x_service_car_to_obu_cc_grpc
-  modules::v2x::proto::v2x_service_obu_to_car_cc_grpc
+  modules::v2x::proto::v2x_service_car_to_obu_cc_proto
+  modules::v2x::proto::v2x_service_obu_to_car_cc_proto
   modules::v2x::proto::v2x_traffic_light_cc_proto
   ${grpc}
 )

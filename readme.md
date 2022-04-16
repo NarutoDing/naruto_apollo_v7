@@ -75,6 +75,8 @@ Currently i use the ApolloPatch.sh file to solve some bug, it will be solved lat
 
 - /home/naruto/naruto_apollo_v7/modules/map/tools/map_datachecker/client/CMakeLists.txt --->collection_service_cc_grpc replace by collection_service_cc_proto
 - /home/naruto/naruto_apollo_v7/modules/map/tools/map_datachecker/server/CMakeLists.txt --->collection_service_cc_grpc replace by collection_service_cc_proto
+- /home/naruto/naruto_apollo_v7/modules/v2x/v2x_proxy/obu_interface/grpc_interface/CMakeLists.txt --->v2x_service_car_to_obu_cc_grpc  replace by v2x_service_car_to_obu_cc_proto
+- /home/naruto/naruto_apollo_v7/modules/v2x/v2x_proxy/obu_interface/grpc_interface/CMakeLists.txt ---v2x_service_obu_to_car_cc_grpc replace by v2x_service_obu_to_car_cc_proto
 
 ## For QT setting
 

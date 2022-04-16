@@ -431,7 +431,7 @@ if (${ModulesCompile})
   add_subdirectory(modules/perception/lidar/lib/roi_filter/hdmap_roi_filter)
   add_subdirectory(modules/perception/lidar/lib/roi_filter/roi_service_filter)
   add_subdirectory(modules/perception/lidar/lib/roi_filter/hdmap_roi_filter/proto)
-  add_subdirectory(modules/perception/lidar/tools/exporter)
+  #add_subdirectory(modules/perception/lidar/tools/exporter) #bug
   add_subdirectory(modules/perception/base/test)
   add_subdirectory(modules/perception/inference/onnx)
   add_subdirectory(modules/perception/inference/caffe)

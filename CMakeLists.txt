@@ -390,7 +390,7 @@ if (${ModulesCompile})
   add_subdirectory(modules/perception/tool/benchmark/lidar/base)
   add_subdirectory(modules/perception/tool/benchmark/lidar/eval)
   add_subdirectory(modules/perception/lidar/app)
-  add_subdirectory(modules/perception/lidar/tools)
+  #add_subdirectory(modules/perception/lidar/tools) #bug
   add_subdirectory(modules/perception/lidar/common)
   add_subdirectory(modules/perception/lidar/app/proto)
   add_subdirectory(modules/perception/lidar/lib/pointcloud_preprocessor)

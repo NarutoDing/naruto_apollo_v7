@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.16)
 project(modules_planning_tools)
 message("${Green} [info] modules_planning_tools cmakelist ${ColourReset}")
 
-add_executable(pad_terminal
+add_executable(pad_terminal1
   pad_terminal.cc
 )
-target_link_libraries(pad_terminal
+target_link_libraries(pad_terminal1
   cyber::cyber
   modules::common::adapters::adapter_gflags
   modules::common::util::message_util

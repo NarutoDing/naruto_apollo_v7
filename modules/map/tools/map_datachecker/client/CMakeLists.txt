@@ -28,7 +28,7 @@ target_link_libraries(modules_map_tools_map_datachecker_client_client_channel_ch
   modules::map::tools::map_datachecker::client::client_gflags
   modules::map::tools::map_datachecker::client::exception_handler
   cyber::cyber
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
   ${boost}
   ${grpc}
   ${yaml}
@@ -64,7 +64,7 @@ target_link_libraries(modules_map_tools_map_datachecker_client_client_loops_chec
   modules::map::tools::map_datachecker::client::client_gflags
   modules::map::tools::map_datachecker::client::exception_handler
   cyber::cyber
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
   ${boost}
   ${grpc}
   ${yaml}

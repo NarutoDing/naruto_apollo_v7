@@ -22,7 +22,7 @@ set_target_properties(modules_map_tools_map_datachecker_server_channel_verify_ag
 target_link_libraries(modules_map_tools_map_datachecker_server_channel_verify_agent
   modules::map::tools::map_datachecker::server::channel_verify
   modules::map::tools::map_datachecker::proto::collection_error_code_cc_proto
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
   ${grpc}
 )
 add_library(modules::map::tools::map_datachecker::server::channel_verify_agent  ALIAS   modules_map_tools_map_datachecker_server_channel_verify_agent)
@@ -68,7 +68,7 @@ set_target_properties(modules_map_tools_map_datachecker_server_loops_verify_agen
 target_link_libraries(modules_map_tools_map_datachecker_server_loops_verify_agent
   modules::map::tools::map_datachecker::server::laps_checker
   modules::map::tools::map_datachecker::server::pose_collection_agent
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
   ${grpc}
 )
 add_library(modules::map::tools::map_datachecker::server::loops_verify_agent  ALIAS   modules_map_tools_map_datachecker_server_loops_verify_agent)
@@ -142,7 +142,7 @@ target_link_libraries(modules_map_tools_map_datachecker_server_worker_agent
   modules::map::tools::map_datachecker::server::pose_collection
   modules::map::tools::map_datachecker::server::static_align
   modules::map::tools::map_datachecker::proto::collection_error_code_cc_proto
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
   ${grpc}
 )
 add_library(modules::map::tools::map_datachecker::server::worker_agent  ALIAS   modules_map_tools_map_datachecker_server_worker_agent)
@@ -157,7 +157,7 @@ target_link_libraries(modules_map_tools_map_datachecker_server_worker_cyber_node
   cyber::cyber
   modules::drivers::gnss::proto::gnss_best_pose_cc_proto
   modules::map::tools::map_datachecker::proto::collection_error_code_cc_proto
-  modules::map::tools::map_datachecker::proto::collection_service_cc_grpc
+  modules::map::tools::map_datachecker::proto::collection_service_cc_proto
 )
 add_library(modules::map::tools::map_datachecker::server::worker_cyber_node  ALIAS   modules_map_tools_map_datachecker_server_worker_cyber_node)
 

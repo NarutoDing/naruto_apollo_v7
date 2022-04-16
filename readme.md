@@ -73,10 +73,8 @@ Currently i use the ApolloPatch.sh file to solve some bug, it will be solved lat
 
 ## For modules bug
 
-- modules/drivers/lidar/hesai/driver/BUILD  modules/drivers/lidar/robosense/driver/BUILD   **------>** "//modules/drivers/lidar/proto:config_cc_proto",
-- modules/drivers/lidar/velodyne/driver/BUILD **------>** "//modules/drivers/lidar/proto:config_cc_proto",
-- modules/drivers/lidar/robosense/driver/BUILD  **------>**"//modules/drivers/lidar/proto:robosense_cc_proto",
-- modules/drivers/lidar/common/driver_factory/BUILD **------>**"//modules/drivers/lidar/proto:config_cc_proto", **and** "//modules/drivers/lidar/proto:lidar_parameter_cc_proto",
+- /home/naruto/naruto_apollo_v7/modules/map/tools/map_datachecker/client/CMakeLists.txt --->collection_service_cc_grpc replace by collection_service_cc_proto
+- /home/naruto/naruto_apollo_v7/modules/map/tools/map_datachecker/server/CMakeLists.txt --->collection_service_cc_grpc replace by collection_service_cc_proto
 
 ## For QT setting
 

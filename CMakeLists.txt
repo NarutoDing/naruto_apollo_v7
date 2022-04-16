@@ -50,6 +50,7 @@ include($ENV{TOOL_BASE_PATH}/../cmake/gflags.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/glog.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/eigen.cmake)
 include($ENV{TOOL_BASE_PATH}/../cmake/abseil.cmake)
+include($ENV{TOOL_BASE_PATH}/../cmake/tf2.cmake)
 set(Python_INLCUDE_DIRS $ENV{TOOL_BASE_PATH}/Python-3.9.5/include/python3.9)
 include_directories(${Python_INLCUDE_DIRS})
 

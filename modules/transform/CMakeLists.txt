@@ -12,7 +12,7 @@ target_link_libraries(modules_transform_buffer
   cyber::cyber
   cyber::node::node
   modules::common::adapters::adapter_gflags
-  third_party::tf2::tf2
+  ${tf2}
   ${absl}
 )
 add_library(modules::transform::buffer  ALIAS   modules_transform_buffer)

@@ -424,6 +424,8 @@ class NarutoApolloCreateCmakelist:
         library_depend_name_space = '$' + '{' + 'ad_rss' + '}'
       if library_value.find('ncurses5') != -1:
         library_depend_name_space = '$' + '{' + 'CURSES_LIBRARIES' + '}'
+    if library_depend_name_space == "third_party::tf2::tf2":
+      library_depend_name_space = "${tf2}"
     return library_depend_name_space
 
     

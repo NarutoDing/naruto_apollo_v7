@@ -655,5 +655,4 @@ if (${ModulesCompile})
   #add_subdirectory(modules/contrib/cyber_bridge)
   add_subdirectory(modules/contrib/lgsvl_msgs/proto)
   add_subdirectory(modules/civetweb-1.11)
-
 endif()

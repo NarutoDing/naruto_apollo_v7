@@ -13,7 +13,7 @@ target_link_libraries(modules_perception_lidar_lib_ground_detector_spatio_tempor
   modules::perception::lib::registerer::registerer
   ${eigen}
   
-  #modules::perception::lib::io::protobuf_util
+  #modules::perception::lib::io::protobuf_util #bug
   modules::perception::common::i_lib::i_lib
   modules::perception::common::i_lib::pc::i_ground
   modules::perception::common::i_lib::pc::i_struct_s

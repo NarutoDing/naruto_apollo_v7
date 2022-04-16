@@ -31,7 +31,7 @@ target_link_libraries(modules_localization_msf_local_integ_local_integ
   modules::localization::proto::measure_cc_proto
   modules::localization::proto::pose_cc_proto
   modules::localization::proto::sins_pva_cc_proto
-  third_party::localization_msf::localization_msf
+  ${localization_msf} #bug
   ${gflags_LIBRARIES}
   ${yaml}
   ${glog_LIBRARIES}

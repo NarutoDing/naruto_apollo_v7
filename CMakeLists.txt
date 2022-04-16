@@ -234,6 +234,7 @@ if (${ModulesCompile})
   add_subdirectory(modules/v2x/v2x_proxy/os_interface)
   add_subdirectory(modules/v2x/v2x_proxy/obu_interface)
   add_subdirectory(modules/v2x/v2x_proxy/obu_interface/grpc_interface)
+  add_subdirectory(modules/v2x/v2x_proxy/os_interface) #bug
   add_subdirectory(modules/routing/strategy)
   add_subdirectory(modules/routing/core)
   add_subdirectory(modules/routing/proto)
@@ -253,25 +254,25 @@ if (${ModulesCompile})
   add_subdirectory(modules/canbus/tools)
   add_subdirectory(modules/canbus/common)
   add_subdirectory(modules/canbus/vehicle/transit)
-  add_subdirectory(modules/canbus/vehicle/transit/protocol)
+  add_subdirectory(modules/canbus/vehicle/transit/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/gem)
-  add_subdirectory(modules/canbus/vehicle/gem/protocol)
+  add_subdirectory(modules/canbus/vehicle/gem/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/wey)
-  add_subdirectory(modules/canbus/vehicle/wey/protocol)
+  add_subdirectory(modules/canbus/vehicle/wey/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/ge3)
-  add_subdirectory(modules/canbus/vehicle/ge3/protocol)
+  add_subdirectory(modules/canbus/vehicle/ge3/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/zhongyun)
-  add_subdirectory(modules/canbus/vehicle/zhongyun/protocol)
+  add_subdirectory(modules/canbus/vehicle/zhongyun/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/devkit)
-  add_subdirectory(modules/canbus/vehicle/devkit/protocol)
+  add_subdirectory(modules/canbus/vehicle/devkit/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/lincoln)
-  add_subdirectory(modules/canbus/vehicle/lincoln/protocol)
+  add_subdirectory(modules/canbus/vehicle/lincoln/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/ch)
-  add_subdirectory(modules/canbus/vehicle/ch/protocol)
+  add_subdirectory(modules/canbus/vehicle/ch/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/lexus)
-  add_subdirectory(modules/canbus/vehicle/lexus/protocol)
+  add_subdirectory(modules/canbus/vehicle/lexus/protocol)#bug
   add_subdirectory(modules/canbus/vehicle/neolix_edu)
-  add_subdirectory(modules/canbus/vehicle/neolix_edu/protocol)
+  add_subdirectory(modules/canbus/vehicle/neolix_edu/protocol)#bug
   add_subdirectory(modules/localization/msf)
   add_subdirectory(modules/localization/proto)
   add_subdirectory(modules/localization/rtk)
@@ -666,5 +667,5 @@ if (${ModulesCompile})
   add_subdirectory(modules/planning/lattice/behavior)
   add_subdirectory(modules/contrib/cyber_bridge)
   add_subdirectory(modules/contrib/lgsvl_msgs/proto)
-  add_subdirectory(modules/civetweb-1.11)
+  add_subdirectory(modules/civetweb-1.11)#bug
 endif()

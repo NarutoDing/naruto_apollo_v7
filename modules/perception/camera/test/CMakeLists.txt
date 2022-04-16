@@ -18,7 +18,7 @@ add_library(modules_perception_camera_test_camera_common_undistortion  SHARED
 set_target_properties(modules_perception_camera_test_camera_common_undistortion  PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(modules_perception_camera_test_camera_common_undistortion
   modules::perception::base::base
-  third_party::boost
+  ${boost}
   ${yaml}
   ${opencv}
 )
@@ -31,7 +31,7 @@ set_target_properties(modules_perception_camera_test_camera_lib_calibrator_lanel
 target_link_libraries(modules_perception_camera_test_camera_lib_calibrator_laneline_app_util
   modules::perception::common::i_lib::core::core
   modules::perception::common::i_lib::geometry::i_plane
-  third_party::boost
+  ${boost}
   ${opencv}
 )
 add_library(modules::perception::camera::test::camera_lib_calibrator_laneline_app_util  ALIAS   modules_perception_camera_test_camera_lib_calibrator_laneline_app_util)

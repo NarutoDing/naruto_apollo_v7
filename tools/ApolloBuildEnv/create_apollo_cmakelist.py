@@ -426,6 +426,9 @@ class NarutoApolloCreateCmakelist:
         library_depend_name_space = '$' + '{' + 'CURSES_LIBRARIES' + '}'
     if library_depend_name_space == "third_party::tf2::tf2":
       library_depend_name_space = "${tf2}"
+    if library_depend_name_space == "third_party::boost":
+      library_depend_name_space = "${boost}"
+      
     return library_depend_name_space
 
     

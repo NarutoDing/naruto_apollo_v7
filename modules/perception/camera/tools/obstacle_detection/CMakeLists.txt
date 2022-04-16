@@ -10,7 +10,7 @@ target_link_libraries(obstacle_detection
   modules::perception::base::base
   modules::perception::camera::lib::interface::interface
   modules::perception::common::io::io_util
-  third_party::boost
+  ${boost}
   
   ${opencv}
 )

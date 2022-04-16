@@ -18,5 +18,5 @@ add_executable(lidar_benchmark
 )
 target_link_libraries(lidar_benchmark
   modules::perception::tool::benchmark::lidar::benchmark_evaluation
-  third_party::boost
+  ${boost}
 )

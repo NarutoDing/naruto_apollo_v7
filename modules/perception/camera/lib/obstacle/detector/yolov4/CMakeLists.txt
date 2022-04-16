@@ -26,15 +26,15 @@ target_link_libraries(modules_perception_camera_lib_obstacle_detector_yolov4_yol
   modules::perception::base::base
   modules::perception::camera::common::common
   
-  modules::perception::camera::lib::feature_extractor::tfe::external_feature_extractor
-  modules::perception::camera::lib::feature_extractor::tfe::project_feature
-  modules::perception::camera::lib::feature_extractor::tfe::tracking_feat_extractor
+  #modules::perception::camera::lib::feature_extractor::tfe::external_feature_extractor #bug
+  #modules::perception::camera::lib::feature_extractor::tfe::project_feature  #bug
+  #modules::perception::camera::lib::feature_extractor::tfe::tracking_feat_extractor  #bug
   modules::perception::camera::lib::interface::interface
   modules::perception::inference::inference_factory
   modules::perception::inference::inference_lib
   modules::perception::inference::utils::inference_resize_lib
   modules::perception::inference::utils::inference_util_lib
-  modules::perception::lib::utils::utils
+  #modules::perception::lib::utils::utils  #bug
 )
 add_library(modules::perception::camera::lib::obstacle::detector::yolov4::yolov4_obstacle_detector  ALIAS   modules_perception_camera_lib_obstacle_detector_yolov4_yolov4_obstacle_detector)
 

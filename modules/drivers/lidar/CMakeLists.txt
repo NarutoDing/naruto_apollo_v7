@@ -10,7 +10,7 @@ set_target_properties(modules_drivers_lidar_lidar_driver_component_lib  PROPERTI
 target_link_libraries(modules_drivers_lidar_lidar_driver_component_lib
   cyber::cyber
   modules::drivers::lidar::common::driver_factory::lidar_driver_factory
-  modules::drivers::lidar::proto::config
+  modules::drivers::lidar::proto::config_cc_proto #bug
 )
 add_library(modules::drivers::lidar::lidar_driver_component_lib  ALIAS   modules_drivers_lidar_lidar_driver_component_lib)
 

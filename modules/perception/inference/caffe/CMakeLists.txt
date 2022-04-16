@@ -9,7 +9,7 @@ add_library(modules_perception_inference_caffe_caffe_net_lib  SHARED
 set_target_properties(modules_perception_inference_caffe_caffe_net_lib  PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(modules_perception_inference_caffe_caffe_net_lib
   modules::perception::inference::inference_lib
-  third_party::boost
+  ${boost}
   ${caffe}
   ${Protobuf_LIBRARIES}
   ${tensorrt}

@@ -1,0 +1,2 @@
+# udev rule to create device nodes for the esdcan CAN driver: esdcan-pcie402.ko
+ACTION=="add", SUBSYSTEM=="drivers", KERNEL=="CAN_PCIe402", RUN+="/bin/sh /proc/bus/can/%k/inodes"

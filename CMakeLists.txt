@@ -520,7 +520,9 @@ if (${ModulesCompile})
   add_subdirectory(modules/drivers/smartereye)
   add_subdirectory(modules/drivers/gnss)
   add_subdirectory(modules/drivers/radar/conti_radar)
+  add_subdirectory(modules/drivers/radar/conti_radar/protocol)#bug
   add_subdirectory(modules/drivers/radar/racobit_radar)
+  add_subdirectory(modules/drivers/radar/racobit_radar/protocol)#bug
   add_subdirectory(modules/drivers/radar/ultrasonic_radar)
   add_subdirectory(modules/drivers/radar/conti_radar/proto)
   add_subdirectory(modules/drivers/radar/racobit_radar/proto)
@@ -668,4 +670,5 @@ if (${ModulesCompile})
   add_subdirectory(modules/contrib/cyber_bridge)
   add_subdirectory(modules/contrib/lgsvl_msgs/proto)
   add_subdirectory(modules/civetweb-1.11)#bug
+  add_subdirectory(tools/thirdparty/rtklib)#bug
 endif()

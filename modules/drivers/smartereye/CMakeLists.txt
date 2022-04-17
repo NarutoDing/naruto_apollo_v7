@@ -16,7 +16,7 @@ target_link_libraries(modules_drivers_smartereye_smartereye_component_lib
   modules::common::proto::header_cc_proto
   modules::drivers::proto::sensor_image_cc_proto
   modules::drivers::proto::smartereye_cc_proto
-  third_party::camera_library::smartereye::smartereye
+  
 )
 add_library(modules::drivers::smartereye::smartereye_component_lib  ALIAS   modules_drivers_smartereye_smartereye_component_lib)
 
@@ -28,7 +28,7 @@ target_link_libraries(modules_drivers_smartereye_smartereye_device
   modules::drivers::smartereye::smartereye_handler
   cyber::cyber
   modules::drivers::smartereye::proto::config_cc_proto
-  third_party::camera_library::smartereye::smartereye
+  
 )
 add_library(modules::drivers::smartereye::smartereye_device  ALIAS   modules_drivers_smartereye_smartereye_device)
 
@@ -38,7 +38,7 @@ add_library(modules_drivers_smartereye_smartereye_handler  SHARED
 set_target_properties(modules_drivers_smartereye_smartereye_handler  PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(modules_drivers_smartereye_smartereye_handler
   cyber::cyber
-  third_party::camera_library::smartereye::smartereye
+  
 )
 add_library(modules::drivers::smartereye::smartereye_handler  ALIAS   modules_drivers_smartereye_smartereye_handler)
 

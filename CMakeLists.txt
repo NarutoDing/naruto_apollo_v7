@@ -485,7 +485,7 @@ if (${ModulesCompile})
     add_subdirectory(modules/perception/tool/benchmark/lidar/base)
     add_subdirectory(modules/perception/tool/benchmark/lidar/eval)
     add_subdirectory(modules/perception/lidar/app)
-    add_subdirectory(modules/perception/lidar/tools) ##bug
+    ###add_subdirectory(modules/perception/lidar/tools) ##bug
     add_subdirectory(modules/perception/lidar/common)
     add_subdirectory(modules/perception/lidar/lib/pointcloud_preprocessor)
     add_subdirectory(modules/perception/lidar/lib/object_builder)
@@ -516,7 +516,7 @@ if (${ModulesCompile})
     add_subdirectory(modules/perception/lidar/lib/tracker/semantic_map)
     add_subdirectory(modules/perception/lidar/lib/roi_filter/hdmap_roi_filter)
     add_subdirectory(modules/perception/lidar/lib/roi_filter/roi_service_filter)
-    add_subdirectory(modules/perception/lidar/tools/exporter) ##bug delete
+    ###add_subdirectory(modules/perception/lidar/tools/exporter) ##bug delete
     add_subdirectory(modules/perception/base/test)
     add_subdirectory(modules/perception/inference/onnx)
     add_subdirectory(modules/perception/inference/caffe)

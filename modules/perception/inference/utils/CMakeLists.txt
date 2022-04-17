@@ -38,7 +38,7 @@ set_target_properties(modules_perception_inference_utils_inference_resize_lib  P
 target_link_libraries(modules_perception_inference_utils_inference_resize_lib
   ${tensorrt}
   ${opencv}
-  inference_resize_cuda_lib
+  modules::perception::inference::utils::inference_resize_cuda_lib ##bug
 )
 add_library(modules::perception::inference::utils::inference_resize_lib  ALIAS   modules_perception_inference_utils_inference_resize_lib)
 
@@ -50,7 +50,7 @@ set_target_properties(modules_perception_inference_utils_inference_gemm_lib  PRO
 target_link_libraries(modules_perception_inference_utils_inference_gemm_lib
   ${tensorrt}
   ${opencv}
-  inference_gemm_cuda_lib
+  modules::perception::inference::utils::inference_gemm_cuda_lib##bug
 )
 add_library(modules::perception::inference::utils::inference_gemm_lib  ALIAS   modules_perception_inference_utils_inference_gemm_lib)
 

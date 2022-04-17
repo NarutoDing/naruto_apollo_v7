@@ -11,7 +11,7 @@ set_target_properties(modules_perception_inference_utils_inference_cuda_util_lib
 target_link_libraries(modules_perception_inference_utils_inference_cuda_util_lib
   ${tensorrt}
   ${opencv}
-  inference_cuda_util_cuda_lib
+  modules::perception::inference::utils::inference_cuda_util_cuda_lib#bug
 )
 add_library(modules::perception::inference::utils::inference_cuda_util_lib  ALIAS   modules_perception_inference_utils_inference_cuda_util_lib)
 

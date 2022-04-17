@@ -11,14 +11,14 @@ set_target_properties(modules_perception_inference_tensorrt_plugins_perception_i
 target_link_libraries(modules_perception_inference_tensorrt_plugins_perception_inference_tensorrt_plugins
   ${cuda}
   
-  dfmb_psroi_align_plugin
-  kernels_cuda
-  rcnn_proposal_plugin
-  rpn_proposal_ssd_plugin
-  perception_inference_tensorrt_plugins_argmax_cuda
-  perception_inference_tensorrt_plugins_leakyrelu_cuda
-  perception_inference_tensorrt_plugins_slice_cuda
-  perception_inference_tensorrt_plugins_softmax_cuda
+  modules::perception::inference::tensorrt::plugins::dfmb_psroi_align_plugin #bug
+  modules::perception::inference::tensorrt::plugins::kernels_cuda #bug
+  modules::perception::inference::tensorrt::plugins::rcnn_proposal_plugin #bug
+  modules::perception::inference::tensorrt::plugins::rpn_proposal_ssd_plugin #bug
+  modules::perception::inference::tensorrt::plugins::perception_inference_tensorrt_plugins_argmax_cuda #bug
+  modules::perception::inference::tensorrt::plugins::perception_inference_tensorrt_plugins_leakyrelu_cuda #bug
+  modules::perception::inference::tensorrt::plugins::perception_inference_tensorrt_plugins_slice_cuda#bug
+  modules::perception::inference::tensorrt::plugins::perception_inference_tensorrt_plugins_softmax_cuda#bug
 )
 add_library(modules::perception::inference::tensorrt::plugins::perception_inference_tensorrt_plugins  ALIAS   modules_perception_inference_tensorrt_plugins_perception_inference_tensorrt_plugins)
 

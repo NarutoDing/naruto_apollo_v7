@@ -36,6 +36,7 @@ endif()
 
 
 message("${Green} [info] naruto_apollo cmakelist ${ColourReset}")
+set(WITH_TELEOP 1)
 set(CMAKE_BUILD_TYPE "Debug")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14  -fPIC  -pthread -mavx -march=native ")
 option(BUILD_SHARED_LIBS "build as shared library" ON)

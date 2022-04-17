@@ -10,7 +10,8 @@ set_target_properties(modules_drivers_canbus_can_client_hermes_can_hermes_can_cl
 target_link_libraries(modules_drivers_canbus_can_client_hermes_can_hermes_can_client
   modules::common::proto::error_code_cc_proto
   modules::drivers::canbus::can_client::can_client
-  third_party::can_card_library::hermes_can::hermes_can
+  #third_party::can_card_library::hermes_can::hermes_can
+  ${hermes_can} #bug
 )
 add_library(modules::drivers::canbus::can_client::hermes_can::hermes_can_client  ALIAS   modules_drivers_canbus_can_client_hermes_can_hermes_can_client)
 

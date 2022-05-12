@@ -64,7 +64,7 @@ find_package(CUDA REQUIRED)
 
 
 set(CyberCompile 1)
-set(ModulesCompile 1)
+set(ModulesCompile 0)
 set(ProtoCompile 1)
 #add_sub_modules here====================to build proto====================
 if (${ProtoCompile})
